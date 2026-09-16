@@ -2,31 +2,39 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
+
 <meta charset="UTF-8">
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
 
 <title>The Pahenawa Boutique | Lucknow</title>
 
 <meta name="description"
-content="The Pahenawa Boutique in Gomti Nagar, Lucknow — bespoke lehengas, shararas, sarees, blouses, gowns and custom-designed ethnic wear.">
+content="The Pahenawa Boutique — bespoke ethnic wear, bridal couture, custom stitching and personalised designs in Gomti Nagar, Lucknow.">
 
 <link rel="preconnect" href="https://fonts.googleapis.com">
 <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
 
-<link href="https://fonts.googleapis.com/css2?family=Cormorant+Garamond:wght@400;500;600;700&family=DM+Sans:wght@400;500;600;700&display=swap" rel="stylesheet">
+<link href="https://fonts.googleapis.com/css2?family=Cormorant+Garamond:wght@400;500;600;700&family=DM+Sans:wght@400;500;600&display=swap" rel="stylesheet">
+
 
 <style>
 
+/* =========================================================
+   ROOT
+========================================================= */
+
 :root{
-    --cream:#f8f4ed;
-    --ivory:#fffdf8;
-    --brown:#3d2921;
-    --brown2:#6c4a3d;
-    --gold:#b89558;
-    --light-gold:#d8c092;
-    --text:#29211e;
-    --muted:#756c67;
-    --white:#ffffff;
+    --cream:#f7f2ea;
+    --ivory:#fffdf9;
+    --brown:#39251d;
+    --brown-light:#67483b;
+    --gold:#b99860;
+    --gold-light:#d9c59b;
+    --dark:#211611;
+    --text:#2e2723;
+    --muted:#746b65;
+    --white:#fff;
+    --border:#e3dbd1;
 }
 
 *{
@@ -47,72 +55,116 @@ body{
 }
 
 img{
-    width:100%;
     display:block;
+    width:100%;
 }
 
 a{
-    text-decoration:none;
     color:inherit;
+    text-decoration:none;
 }
 
-button{
+button,
+input,
+select,
+textarea{
     font-family:inherit;
 }
 
-/* ================= NAVBAR ================= */
+
+/* =========================================================
+   PREMIUM LOGO
+========================================================= */
+
+.logo{
+    display:flex;
+    align-items:center;
+    gap:11px;
+}
+
+.logo-symbol{
+    width:43px;
+    height:43px;
+    border:1px solid currentColor;
+    border-radius:50%;
+    display:flex;
+    align-items:center;
+    justify-content:center;
+    position:relative;
+}
+
+.logo-symbol::before{
+    content:"P";
+    font-family:"Cormorant Garamond",serif;
+    font-size:30px;
+    font-weight:500;
+    line-height:1;
+}
+
+.logo-symbol::after{
+    content:"";
+    position:absolute;
+    width:28px;
+    height:28px;
+    border:1px solid currentColor;
+    border-radius:50%;
+    opacity:.35;
+}
+
+.logo-text{
+    font-family:"Cormorant Garamond",serif;
+    font-size:27px;
+    line-height:.75;
+    letter-spacing:1px;
+}
+
+.logo-text small{
+    display:block;
+    font-family:"DM Sans",sans-serif;
+    font-size:7px;
+    letter-spacing:4px;
+    margin-top:9px;
+}
+
+
+/* =========================================================
+   NAVBAR
+========================================================= */
 
 .navbar{
     position:fixed;
     top:0;
     left:0;
     width:100%;
-    height:78px;
-    z-index:1000;
-    display:flex;
-    align-items:center;
-    justify-content:space-between;
+    height:80px;
     padding:0 6%;
-    transition:.4s;
+    display:flex;
+    justify-content:space-between;
+    align-items:center;
+    z-index:1000;
     color:white;
+    transition:.4s;
 }
 
 .navbar.scrolled{
-    background:rgba(255,253,248,.96);
-    backdrop-filter:blur(15px);
+    background:rgba(255,253,249,.96);
+    backdrop-filter:blur(18px);
     color:var(--brown);
-    box-shadow:0 5px 25px rgba(0,0,0,.08);
-}
-
-.logo{
-    font-family:"Cormorant Garamond",serif;
-    font-size:28px;
-    font-weight:600;
-    letter-spacing:1px;
-}
-
-.logo span{
-    display:block;
-    font-family:"DM Sans",sans-serif;
-    font-size:8px;
-    letter-spacing:4px;
-    text-align:center;
-    margin-top:-5px;
+    box-shadow:0 5px 30px rgba(0,0,0,.07);
 }
 
 .nav-links{
     display:flex;
-    gap:32px;
     align-items:center;
-    font-size:13px;
-    font-weight:500;
+    gap:30px;
+    font-size:12px;
 }
 
 .nav-links a{
     position:relative;
 }
 
-.nav-links a::after{
+.nav-links a:not(.nav-appointment)::after{
     content:"";
     position:absolute;
     left:0;
@@ -127,65 +179,62 @@ button{
     width:100%;
 }
 
-.nav-btn{
-    padding:12px 20px;
+.nav-appointment{
     border:1px solid currentColor;
+    padding:12px 19px;
     border-radius:30px;
 }
 
 .menu-btn{
     display:none;
-    font-size:27px;
+    font-size:26px;
     cursor:pointer;
 }
 
-/* ================= HERO ================= */
+
+/* =========================================================
+   HERO
+========================================================= */
 
 .hero{
     min-height:100vh;
     position:relative;
     display:flex;
     align-items:center;
-    overflow:hidden;
     color:white;
+
     background:
-    linear-gradient(90deg,
-        rgba(28,18,14,.82),
-        rgba(28,18,14,.38),
-        rgba(28,18,14,.15)),
+    linear-gradient(
+        90deg,
+        rgba(28,18,14,.86),
+        rgba(28,18,14,.45),
+        rgba(28,18,14,.12)
+    ),
     url("https://lh3.googleusercontent.com/gps-cs-s/AHRPTWkGyR6U0JTOQSIVKXFaBiadCsMrRB3Axe1rLznnarUeQLpRLKMqxjIYAHNsvBGopQRrPxKswmS2QvWZc20Q6VWnrmjGZR-sN8s4Yr9tmqJ69r0fZjxplFC4mLq71XSmM6DSt0s=w408-h316-k-no")
     center/cover;
-}
-
-.hero::after{
-    content:"";
-    position:absolute;
-    inset:0;
-    background:linear-gradient(transparent 60%,rgba(0,0,0,.45));
 }
 
 .hero-content{
     position:relative;
     z-index:2;
-    max-width:760px;
     margin-left:9%;
+    max-width:720px;
     padding-top:70px;
 }
 
-.small-title{
-    font-size:11px;
+.eyebrow{
+    font-size:10px;
     letter-spacing:5px;
     text-transform:uppercase;
-    margin-bottom:20px;
-    color:#ead8b3;
+    color:var(--gold-light);
+    margin-bottom:22px;
 }
 
 .hero h1{
     font-family:"Cormorant Garamond",serif;
-    font-size:clamp(60px,8vw,105px);
-    line-height:.86;
     font-weight:500;
-    margin-bottom:28px;
+    font-size:clamp(65px,9vw,115px);
+    line-height:.82;
 }
 
 .hero h1 em{
@@ -193,31 +242,32 @@ button{
 }
 
 .hero p{
-    max-width:520px;
-    line-height:1.8;
+    margin-top:28px;
+    max-width:500px;
     color:#eee5dc;
-    font-size:15px;
+    line-height:1.8;
+    font-size:14px;
 }
 
 .hero-buttons{
-    display:flex;
-    gap:14px;
     margin-top:35px;
+    display:flex;
+    gap:13px;
 }
 
 .btn{
-    padding:15px 27px;
+    padding:15px 25px;
     border-radius:40px;
-    font-size:13px;
+    font-size:12px;
     font-weight:600;
-    transition:.3s;
     display:inline-flex;
-    align-items:center;
     justify-content:center;
+    align-items:center;
+    transition:.3s;
 }
 
 .btn-primary{
-    background:#fff;
+    background:white;
     color:var(--brown);
 }
 
@@ -235,11 +285,13 @@ button{
     color:var(--brown);
 }
 
-/* ================= INTRO ================= */
 
-.intro{
-    padding:110px 8%;
-    text-align:center;
+/* =========================================================
+   COMMON SECTIONS
+========================================================= */
+
+section{
+    position:relative;
 }
 
 .section-label{
@@ -247,31 +299,43 @@ button{
     text-transform:uppercase;
     letter-spacing:4px;
     color:var(--gold);
-    margin-bottom:15px;
+    margin-bottom:14px;
 }
 
-.intro h2,
 .section-heading{
     font-family:"Cormorant Garamond",serif;
-    font-size:clamp(42px,5vw,65px);
-    font-weight:500;
-    line-height:1;
     color:var(--brown);
+    font-size:clamp(44px,5vw,66px);
+    font-weight:500;
+    line-height:.95;
+}
+
+
+/* =========================================================
+   INTRO
+========================================================= */
+
+.intro{
+    padding:110px 8%;
+    text-align:center;
 }
 
 .intro p{
-    max-width:700px;
-    margin:25px auto 0;
-    line-height:1.9;
+    max-width:720px;
+    margin:28px auto 0;
     color:var(--muted);
-    font-size:15px;
+    line-height:1.9;
+    font-size:14px;
 }
 
-/* ================= SERVICES ================= */
+
+/* =========================================================
+   SERVICES
+========================================================= */
 
 .services{
-    background:var(--cream);
     padding:100px 8%;
+    background:var(--cream);
 }
 
 .heading-row{
@@ -281,63 +345,66 @@ button{
     margin-bottom:55px;
 }
 
-.heading-row p{
+.heading-row > p{
     max-width:380px;
     color:var(--muted);
-    line-height:1.7;
-    font-size:14px;
+    line-height:1.8;
+    font-size:13px;
 }
 
 .service-grid{
     display:grid;
     grid-template-columns:repeat(4,1fr);
-    gap:18px;
+    gap:16px;
 }
 
 .service{
     background:white;
-    padding:35px 25px;
-    min-height:230px;
-    transition:.4s;
+    padding:35px 27px;
+    min-height:240px;
     border-bottom:2px solid transparent;
+    transition:.4s;
 }
 
 .service:hover{
     transform:translateY(-8px);
     border-color:var(--gold);
-    box-shadow:0 15px 40px rgba(54,36,28,.08);
+    box-shadow:0 20px 40px rgba(55,38,29,.08);
 }
 
 .service-number{
-    font-family:"Cormorant Garamond",serif;
     color:var(--gold);
+    font-family:"Cormorant Garamond",serif;
     font-size:30px;
 }
 
 .service h3{
     font-family:"Cormorant Garamond",serif;
-    font-size:29px;
-    margin:25px 0 10px;
+    font-size:30px;
     font-weight:600;
+    margin:25px 0 10px;
 }
 
 .service p{
     color:var(--muted);
-    font-size:13px;
-    line-height:1.7;
+    font-size:12px;
+    line-height:1.8;
 }
 
-/* ================= COLLECTION ================= */
+
+/* =========================================================
+   COLLECTION
+========================================================= */
 
 .collection{
     padding:110px 8%;
 }
 
 .collection-grid{
-    display:grid;
-    grid-template-columns:1.2fr .8fr;
-    gap:25px;
     margin-top:55px;
+    display:grid;
+    grid-template-columns:1.15fr .85fr;
+    gap:22px;
 }
 
 .collection-main{
@@ -349,7 +416,7 @@ button{
 .collection-side{
     display:grid;
     grid-template-rows:1fr 1fr;
-    gap:25px;
+    gap:22px;
 }
 
 .collection-card{
@@ -371,110 +438,294 @@ button{
 
 .collection-overlay{
     position:absolute;
-    inset:auto 0 0 0;
+    bottom:0;
+    left:0;
+    right:0;
     padding:35px;
     color:white;
-    background:linear-gradient(transparent,rgba(0,0,0,.75));
+    background:linear-gradient(
+        transparent,
+        rgba(0,0,0,.78)
+    );
 }
 
 .collection-overlay h3{
     font-family:"Cormorant Garamond",serif;
     font-size:38px;
+    font-weight:500;
 }
 
 .collection-overlay p{
-    font-size:12px;
     margin-top:5px;
+    font-size:11px;
 }
 
-/* ================= STORY ================= */
 
-.story{
-    background:var(--brown);
-    color:white;
-    display:grid;
-    grid-template-columns:1fr 1fr;
-    min-height:620px;
-}
+/* =========================================================
+   INSTAGRAM STYLE PORTFOLIO
+========================================================= */
 
-.story-image{
-    background:url("https://lh3.googleusercontent.com/gps-cs-s/AHRPTWmPAp6pA3CxGi30ZIo_fJ_sSeegqqtJ8O07Xl4nKbuH3Enn-qCiceOoK5KdSPjPDxkZwnpE5ALARhWxXjwvIhcz11z4gcoYUQ_jacw-2ixTzoprL70m9RzVDo0iDByJukQZYAmoNYEkr8zE=w224-h398-k-no")
-    center/cover;
-}
-
-.story-content{
-    padding:90px 10%;
-    display:flex;
-    flex-direction:column;
-    justify-content:center;
-}
-
-.story-content .section-label{
-    color:var(--light-gold);
-}
-
-.story-content h2{
-    font-family:"Cormorant Garamond",serif;
-    font-size:60px;
-    font-weight:500;
-    line-height:.95;
-    margin-bottom:25px;
-}
-
-.story-content p{
-    color:#d8cfca;
-    line-height:1.9;
-    font-size:14px;
-    max-width:500px;
-}
-
-/* ================= GALLERY ================= */
-
-.gallery{
+.portfolio{
     padding:110px 6%;
+    background:var(--cream);
 }
 
-.gallery-header{
+.portfolio-header{
     text-align:center;
     margin-bottom:50px;
 }
 
-.gallery-grid{
+.instagram-handle{
+    display:inline-flex;
+    gap:8px;
+    align-items:center;
+    margin-top:14px;
+    font-size:12px;
+    color:var(--brown-light);
+}
+
+.instagram-icon{
+    width:19px;
+    height:19px;
+    border:1.5px solid currentColor;
+    border-radius:5px;
+    position:relative;
+}
+
+.instagram-icon::before{
+    content:"";
+    position:absolute;
+    width:6px;
+    height:6px;
+    border:1px solid currentColor;
+    border-radius:50%;
+    top:5px;
+    left:5px;
+}
+
+.instagram-icon::after{
+    content:"";
+    position:absolute;
+    width:2px;
+    height:2px;
+    background:currentColor;
+    border-radius:50%;
+    top:3px;
+    right:3px;
+}
+
+.portfolio-grid{
     display:grid;
     grid-template-columns:repeat(4,1fr);
-    grid-auto-rows:280px;
-    gap:12px;
+    gap:8px;
 }
 
-.gallery-item{
+.portfolio-item{
+    height:350px;
+    position:relative;
     overflow:hidden;
-    cursor:pointer;
 }
 
-.gallery-item img{
+.portfolio-item:nth-child(2),
+.portfolio-item:nth-child(5){
+    height:430px;
+}
+
+.portfolio-item img{
     width:100%;
     height:100%;
     object-fit:cover;
     transition:.7s;
 }
 
-.gallery-item:hover img{
+.portfolio-overlay{
+    position:absolute;
+    inset:0;
+    display:flex;
+    align-items:center;
+    justify-content:center;
+    background:rgba(35,23,18,.45);
+    color:white;
+    opacity:0;
+    transition:.35s;
+}
+
+.portfolio-item:hover img{
     transform:scale(1.06);
 }
 
-.gallery-item:nth-child(1){
-    grid-row:span 2;
+.portfolio-item:hover .portfolio-overlay{
+    opacity:1;
 }
 
-.gallery-item:nth-child(4){
-    grid-column:span 2;
+.portfolio-overlay span{
+    font-size:11px;
+    letter-spacing:2px;
+    text-transform:uppercase;
 }
 
-/* ================= REVIEWS ================= */
+
+/* =========================================================
+   BEFORE / AFTER
+========================================================= */
+
+.transformation{
+    padding:110px 8%;
+}
+
+.transformation-header{
+    text-align:center;
+    margin-bottom:55px;
+}
+
+.before-after{
+    max-width:1000px;
+    height:550px;
+    margin:auto;
+    position:relative;
+    overflow:hidden;
+    user-select:none;
+}
+
+.before-after img{
+    position:absolute;
+    inset:0;
+    width:100%;
+    height:100%;
+    object-fit:cover;
+}
+
+.after-image{
+    clip-path:inset(0 0 0 50%);
+}
+
+.ba-label{
+    position:absolute;
+    top:20px;
+    padding:9px 14px;
+    background:rgba(255,255,255,.9);
+    font-size:9px;
+    letter-spacing:2px;
+    text-transform:uppercase;
+    z-index:5;
+}
+
+.before-label{
+    left:20px;
+}
+
+.after-label{
+    right:20px;
+}
+
+.ba-slider{
+    position:absolute;
+    z-index:10;
+    top:0;
+    bottom:0;
+    left:50%;
+    width:3px;
+    background:white;
+    cursor:ew-resize;
+    transform:translateX(-50%);
+}
+
+.ba-slider::before{
+    content:"↔";
+    position:absolute;
+    top:50%;
+    left:50%;
+    transform:translate(-50%,-50%);
+    width:44px;
+    height:44px;
+    border-radius:50%;
+    background:white;
+    color:var(--brown);
+    display:flex;
+    justify-content:center;
+    align-items:center;
+    box-shadow:0 5px 20px rgba(0,0,0,.2);
+}
+
+
+/* =========================================================
+   STORY
+========================================================= */
+
+.story{
+    display:grid;
+    grid-template-columns:1fr 1fr;
+    background:var(--brown);
+    color:white;
+}
+
+.story-image{
+    min-height:600px;
+    background:
+    url("https://lh3.googleusercontent.com/gps-cs-s/AHRPTWmPAp6pA3CxGi30ZIo_fJ_sSeegqqtJ8O07Xl4nKbuH3Enn-qCiceOoK5KdSPjPDxkZwnpE5ALARhWxXjwvIhcz11z4gcoYUQ_jacw-2ixTzoprL70m9RzVDo0iDByJukQZYAmoNYEkr8zE=w224-h398-k-no")
+    center/cover;
+}
+
+.story-content{
+    padding:90px 11%;
+    display:flex;
+    flex-direction:column;
+    justify-content:center;
+}
+
+.story-content .section-label{
+    color:var(--gold-light);
+}
+
+.story-content h2{
+    font-family:"Cormorant Garamond",serif;
+    font-size:62px;
+    line-height:.95;
+    font-weight:500;
+    margin-bottom:25px;
+}
+
+.story-content p{
+    color:#d8cfca;
+    max-width:500px;
+    line-height:1.9;
+    font-size:13px;
+}
+
+
+/* =========================================================
+   REVIEWS
+========================================================= */
 
 .reviews{
     padding:110px 8%;
     background:var(--cream);
+}
+
+.review-heading{
+    text-align:center;
+}
+
+.rating{
+    text-align:center;
+    margin-top:35px;
+}
+
+.rating-number{
+    font-family:"Cormorant Garamond",serif;
+    font-size:75px;
+    color:var(--brown);
+}
+
+.rating-stars{
+    color:var(--gold);
+    letter-spacing:4px;
+}
+
+.rating-sub{
+    color:var(--muted);
+    font-size:12px;
+    margin-top:5px;
 }
 
 .review-grid{
@@ -489,118 +740,170 @@ button{
     padding:35px;
 }
 
-.stars{
+.review-stars{
     color:var(--gold);
     letter-spacing:3px;
     margin-bottom:20px;
 }
 
 .review p{
+    font-size:13px;
     color:#5d5550;
-    line-height:1.8;
-    font-size:14px;
+    line-height:1.9;
 }
 
 .reviewer{
-    margin-top:25px;
+    margin-top:22px;
+    font-size:12px;
     font-weight:600;
-    font-size:13px;
 }
 
-.rating{
-    margin-top:60px;
-    text-align:center;
-}
 
-.rating strong{
-    font-family:"Cormorant Garamond",serif;
-    font-size:70px;
-    font-weight:500;
-    color:var(--brown);
-}
-
-.rating span{
-    display:block;
-    color:var(--muted);
-}
-
-/* ================= APPOINTMENT ================= */
+/* =========================================================
+   APPOINTMENT
+========================================================= */
 
 .appointment{
     padding:110px 8%;
     display:grid;
-    grid-template-columns:1fr 1fr;
+    grid-template-columns:.9fr 1.1fr;
     gap:80px;
-    align-items:center;
+    align-items:start;
 }
 
 .appointment h2{
     font-family:"Cormorant Garamond",serif;
-    font-size:65px;
-    line-height:.95;
-    color:var(--brown);
+    font-size:68px;
     font-weight:500;
+    line-height:.9;
+    color:var(--brown);
 }
 
-.appointment-text{
+.appointment-intro{
     color:var(--muted);
-    line-height:1.8;
+    max-width:460px;
     margin-top:25px;
-    max-width:480px;
+    line-height:1.8;
+    font-size:13px;
 }
 
 .contact-details{
     margin-top:35px;
 }
 
-.contact-details div{
-    margin-bottom:15px;
-    font-size:14px;
+.contact-detail{
+    margin-bottom:16px;
+    font-size:13px;
 }
 
-.contact-details strong{
+.contact-detail strong{
     display:inline-block;
     width:90px;
 }
 
-.form{
+
+/* =========================================================
+   APPOINTMENT CALENDAR
+========================================================= */
+
+.booking-card{
     background:var(--cream);
-    padding:40px;
+    padding:38px;
 }
 
-.form input,
-.form select,
-.form textarea{
+.booking-title{
+    font-family:"Cormorant Garamond",serif;
+    font-size:32px;
+    color:var(--brown);
+    margin-bottom:25px;
+}
+
+.form-label{
+    display:block;
+    font-size:10px;
+    letter-spacing:1px;
+    text-transform:uppercase;
+    color:var(--muted);
+    margin-bottom:8px;
+}
+
+.form-row{
+    display:grid;
+    grid-template-columns:1fr 1fr;
+    gap:12px;
+}
+
+.booking-card input,
+.booking-card select,
+.booking-card textarea{
     width:100%;
-    padding:16px;
-    border:1px solid #ddd4ca;
+    padding:15px;
+    border:1px solid var(--border);
     background:white;
-    margin-bottom:14px;
     outline:none;
-    font-family:inherit;
+    margin-bottom:15px;
+    color:var(--text);
 }
 
-.form textarea{
-    min-height:120px;
+.booking-card textarea{
+    min-height:100px;
     resize:vertical;
 }
 
-.form button{
-    width:100%;
-    border:none;
+.time-slots{
+    display:grid;
+    grid-template-columns:repeat(3,1fr);
+    gap:8px;
+    margin-bottom:18px;
+}
+
+.time-slot{
+    border:1px solid var(--border);
+    background:white;
+    padding:12px 5px;
+    font-size:11px;
+    cursor:pointer;
+    transition:.25s;
+}
+
+.time-slot:hover,
+.time-slot.selected{
     background:var(--brown);
     color:white;
-    padding:17px;
+    border-color:var(--brown);
+}
+
+.time-slot.disabled{
+    opacity:.35;
+    cursor:not-allowed;
+}
+
+.booking-submit{
+    width:100%;
+    padding:16px;
+    border:0;
+    background:var(--brown);
+    color:white;
     cursor:pointer;
     font-weight:600;
 }
 
-/* ================= LOCATION ================= */
+.booking-note{
+    font-size:10px;
+    color:var(--muted);
+    margin-top:12px;
+    text-align:center;
+}
+
+
+/* =========================================================
+   LOCATION
+========================================================= */
 
 .location{
-    background:#f1ece4;
     display:grid;
     grid-template-columns:1fr 1fr;
+    background:#f0ebe3;
 }
 
 .location-info{
@@ -609,7 +912,8 @@ button{
 
 .location-info h2{
     font-family:"Cormorant Garamond",serif;
-    font-size:60px;
+    font-size:62px;
+    line-height:.9;
     font-weight:500;
     color:var(--brown);
 }
@@ -617,7 +921,9 @@ button{
 .location-info p{
     color:var(--muted);
     line-height:1.8;
-    margin:20px 0;
+    font-size:13px;
+    max-width:470px;
+    margin:25px 0;
 }
 
 .map{
@@ -631,38 +937,39 @@ button{
     border:0;
 }
 
-/* ================= FOOTER ================= */
+
+/* =========================================================
+   FOOTER
+========================================================= */
 
 footer{
-    background:#211713;
+    background:#211612;
     color:#cfc5bf;
-    padding:60px 8% 30px;
+    padding:65px 8% 30px;
 }
 
 .footer-top{
     display:flex;
     justify-content:space-between;
-    gap:40px;
+    gap:50px;
     padding-bottom:50px;
 }
 
 .footer-logo{
-    font-family:"Cormorant Garamond",serif;
-    font-size:38px;
     color:white;
 }
 
-.footer-top p{
-    max-width:400px;
-    margin-top:10px;
-    font-size:13px;
-    line-height:1.7;
+.footer-description{
+    max-width:380px;
+    margin-top:14px;
+    font-size:12px;
+    line-height:1.8;
 }
 
 .footer-links{
     display:flex;
-    gap:35px;
-    font-size:13px;
+    gap:30px;
+    font-size:12px;
 }
 
 .footer-links a:hover{
@@ -672,18 +979,44 @@ footer{
 .footer-bottom{
     border-top:1px solid #493c36;
     padding-top:25px;
-    font-size:11px;
     display:flex;
     justify-content:space-between;
+    font-size:10px;
 }
 
-/* ================= WHATSAPP ================= */
+
+/* =========================================================
+   FLOATING WHATSAPP
+========================================================= */
+
+.whatsapp-container{
+    position:fixed;
+    right:22px;
+    bottom:22px;
+    z-index:999;
+    display:flex;
+    align-items:center;
+    gap:9px;
+}
+
+.whatsapp-label{
+    background:white;
+    padding:10px 15px;
+    border-radius:25px;
+    font-size:11px;
+    box-shadow:0 5px 25px rgba(0,0,0,.15);
+    opacity:0;
+    transform:translateX(10px);
+    transition:.3s;
+    pointer-events:none;
+}
+
+.whatsapp-container:hover .whatsapp-label{
+    opacity:1;
+    transform:translateX(0);
+}
 
 .whatsapp{
-    position:fixed;
-    right:25px;
-    bottom:25px;
-    z-index:999;
     width:58px;
     height:58px;
     border-radius:50%;
@@ -692,8 +1025,8 @@ footer{
     display:flex;
     align-items:center;
     justify-content:center;
-    font-size:27px;
-    box-shadow:0 8px 30px rgba(0,0,0,.25);
+    font-size:25px;
+    box-shadow:0 8px 25px rgba(0,0,0,.25);
     transition:.3s;
 }
 
@@ -701,18 +1034,45 @@ footer{
     transform:scale(1.1);
 }
 
-/* ================= MOBILE ================= */
 
-@media(max-width:900px){
+/* =========================================================
+   TOAST
+========================================================= */
+
+.toast{
+    position:fixed;
+    bottom:95px;
+    left:50%;
+    transform:translateX(-50%) translateY(20px);
+    background:var(--brown);
+    color:white;
+    padding:13px 20px;
+    font-size:12px;
+    opacity:0;
+    pointer-events:none;
+    transition:.35s;
+    z-index:2000;
+}
+
+.toast.show{
+    opacity:1;
+    transform:translateX(-50%) translateY(0);
+}
+
+
+/* =========================================================
+   MOBILE
+========================================================= */
+
+@media(max-width:950px){
 
     .navbar{
-        height:68px;
-        padding:0 6%;
+        height:70px;
     }
 
     .nav-links{
         position:absolute;
-        top:68px;
+        top:70px;
         left:0;
         width:100%;
         background:var(--ivory);
@@ -732,17 +1092,8 @@ footer{
         display:block;
     }
 
-    .nav-btn{
-        border:0;
-    }
-
     .hero-content{
-        margin-left:7%;
-        margin-right:7%;
-    }
-
-    .hero h1{
-        font-size:68px;
+        margin:0 7%;
     }
 
     .service-grid{
@@ -757,16 +1108,25 @@ footer{
         height:550px;
     }
 
+    .portfolio-grid{
+        grid-template-columns:1fr 1fr;
+    }
+
+    .portfolio-item{
+        height:300px;
+    }
+
+    .portfolio-item:nth-child(2),
+    .portfolio-item:nth-child(5){
+        height:350px;
+    }
+
     .story{
         grid-template-columns:1fr;
     }
 
     .story-image{
         min-height:450px;
-    }
-
-    .gallery-grid{
-        grid-template-columns:1fr 1fr;
     }
 
     .review-grid{
@@ -789,21 +1149,27 @@ footer{
     .footer-top{
         flex-direction:column;
     }
+
 }
 
-@media(max-width:550px){
+@media(max-width:600px){
 
-    .hero{
-        min-height:90vh;
+    .logo-text{
+        font-size:23px;
+    }
+
+    .logo-symbol{
+        width:38px;
+        height:38px;
     }
 
     .hero h1{
-        font-size:56px;
+        font-size:58px;
     }
 
     .hero-buttons{
         flex-direction:column;
-        align-items:flex-start;
+        align-items:stretch;
     }
 
     .btn{
@@ -814,7 +1180,7 @@ footer{
         display:block;
     }
 
-    .heading-row p{
+    .heading-row > p{
         margin-top:20px;
     }
 
@@ -827,25 +1193,42 @@ footer{
     }
 
     .collection-side{
-        height:600px;
+        height:550px;
     }
 
-    .gallery-grid{
+    .portfolio-grid{
         grid-template-columns:1fr 1fr;
-        grid-auto-rows:210px;
     }
 
-    .gallery-item:nth-child(4){
-        grid-column:auto;
+    .portfolio-item,
+    .portfolio-item:nth-child(2),
+    .portfolio-item:nth-child(5){
+        height:250px;
+    }
+
+    .before-after{
+        height:420px;
+    }
+
+    .story-content h2{
+        font-size:50px;
     }
 
     .appointment h2,
     .location-info h2{
-        font-size:48px;
+        font-size:50px;
     }
 
-    .form{
+    .form-row{
+        grid-template-columns:1fr;
+    }
+
+    .booking-card{
         padding:25px;
+    }
+
+    .time-slots{
+        grid-template-columns:1fr 1fr 1fr;
     }
 
     .footer-links{
@@ -856,43 +1239,74 @@ footer{
         flex-direction:column;
         gap:10px;
     }
+
+    .whatsapp-label{
+        display:none;
+    }
+
 }
 
 </style>
 </head>
 
+
 <body>
 
-<!-- ================= NAVBAR ================= -->
+
+<!-- =========================================================
+     NAVIGATION
+========================================================= -->
 
 <header class="navbar" id="navbar">
 
     <a href="#home" class="logo">
-        PAHENAWA
-        <span>BOUTIQUE</span>
+
+        <div class="logo-symbol"></div>
+
+        <div class="logo-text">
+            PAHENAWA
+            <small>THE BOUTIQUE</small>
+        </div>
+
     </a>
 
+
     <nav class="nav-links" id="navLinks">
+
         <a href="#home">Home</a>
+
         <a href="#services">Services</a>
+
         <a href="#collection">Collection</a>
-        <a href="#gallery">Gallery</a>
+
+        <a href="#portfolio">Portfolio</a>
+
         <a href="#reviews">Reviews</a>
-        <a href="#contact" class="nav-btn">Book Appointment</a>
+
+        <a href="#appointment" class="nav-appointment">
+            Book Appointment
+        </a>
+
     </nav>
 
-    <div class="menu-btn" id="menuBtn">☰</div>
+
+    <div class="menu-btn" id="menuBtn">
+        ☰
+    </div>
 
 </header>
 
 
-<!-- ================= HERO ================= -->
+
+<!-- =========================================================
+     HERO
+========================================================= -->
 
 <section class="hero" id="home">
 
     <div class="hero-content">
 
-        <div class="small-title">
+        <div class="eyebrow">
             Bespoke Indian Couture · Lucknow
         </div>
 
@@ -902,19 +1316,19 @@ footer{
         </h1>
 
         <p>
-            Discover thoughtfully designed ethnic wear,
-            crafted around your personality, your occasion
-            and your vision.
+            Thoughtfully designed ethnic wear, tailored
+            around your personality, your occasion and
+            your vision.
         </p>
 
         <div class="hero-buttons">
 
-            <a href="#contact" class="btn btn-primary">
+            <a href="#appointment" class="btn btn-primary">
                 Book an Appointment
             </a>
 
-            <a href="#collection" class="btn btn-outline">
-                Explore Collection
+            <a href="#portfolio" class="btn btn-outline">
+                Explore Our Work
             </a>
 
         </div>
@@ -924,82 +1338,117 @@ footer{
 </section>
 
 
-<!-- ================= INTRO ================= -->
+
+<!-- =========================================================
+     INTRO
+========================================================= -->
 
 <section class="intro">
 
-    <div class="section-label">The Pahenawa Experience</div>
+    <div class="section-label">
+        The Pahenawa Experience
+    </div>
 
-    <h2>
+    <h2 class="section-heading">
         Designed for you.<br>
         Crafted with care.
     </h2>
 
     <p>
-        At The Pahenawa Boutique, every outfit begins with an idea.
-        From elegant sarees and perfectly fitted blouses to
-        statement lehengas, shararas and gowns, we turn your
-        vision into an outfit that feels uniquely yours.
+        Every Pahenawa outfit begins with an idea.
+        From elegant sarees and perfectly fitted blouses
+        to statement lehengas, shararas and gowns,
+        we transform your vision into something uniquely yours.
     </p>
 
 </section>
 
 
-<!-- ================= SERVICES ================= -->
+
+<!-- =========================================================
+     SERVICES
+========================================================= -->
 
 <section class="services" id="services">
 
     <div class="heading-row">
 
         <div>
-            <div class="section-label">What We Do</div>
-            <h2 class="section-heading">Our Services</h2>
+
+            <div class="section-label">
+                What We Do
+            </div>
+
+            <h2 class="section-heading">
+                Our Services
+            </h2>
+
         </div>
 
         <p>
             From first measurements to the final fitting,
-            our focus is on precision, craftsmanship and
-            bringing your design idea to life.
+            we focus on precision, craftsmanship and
+            personalised design.
         </p>
 
     </div>
 
+
     <div class="service-grid">
 
         <div class="service">
+
             <div class="service-number">01</div>
+
             <h3>Lehengas</h3>
+
             <p>
                 Custom-designed lehengas created around
                 your occasion, style and preferred silhouette.
             </p>
+
         </div>
 
+
         <div class="service">
+
             <div class="service-number">02</div>
+
             <h3>Shararas</h3>
+
             <p>
                 Elegant sharara sets with personalised
                 cuts, fittings and detailing.
             </p>
+
         </div>
 
+
         <div class="service">
+
             <div class="service-number">03</div>
+
             <h3>Blouses</h3>
+
             <p>
-                Precise blouse fitting and customised
+                Precision blouse fitting and customised
                 designs for sarees and special occasions.
             </p>
+
         </div>
 
+
         <div class="service">
+
             <div class="service-number">04</div>
+
             <h3>Gowns</h3>
+
             <p>
                 Contemporary occasion gowns designed
                 to complement your individual style.
             </p>
+
         </div>
 
     </div>
@@ -1007,26 +1456,41 @@ footer{
 </section>
 
 
-<!-- ================= COLLECTION ================= -->
+
+<!-- =========================================================
+     COLLECTION
+========================================================= -->
 
 <section class="collection" id="collection">
 
-    <div class="section-label">Signature Styles</div>
+    <div class="section-label">
+        Signature Styles
+    </div>
 
     <h2 class="section-heading">
         Made to be remembered.
     </h2>
 
+
     <div class="collection-grid">
+
 
         <div class="collection-main">
 
-            <img src="https://lh3.googleusercontent.com/gps-cs-s/AHRPTWm9BgRRl9we2dsB-M_rLe2KSuh8Uflp5RAb8fW6VdshL7hhbRonr7QCwfs631rf_wDhM_o3xqhjH6IrU8-VwfXcgKX8kWQ5qHGFElsx-ra8o1EoWTx0VB91O0xRdbLc5Luj6cn3T9ZEnR29=w224-h397-k-no"
-            alt="The Pahenawa Boutique outfit">
+            <img
+            src="https://lh3.googleusercontent.com/gps-cs-s/AHRPTWm9BgRRl9we2dsB-M_rLe2KSuh8Uflp5RAb8fW6VdshL7hhbRonr7QCwfs631rf_wDhM_o3xqhjH6IrU8-VwfXcgKX8kWQ5qHGFElsx-ra8o1EoWTx0VB91O0xRdbLc5Luj6cn3T9ZEnR29=w224-h397-k-no"
+            alt="Pahenawa bridal outfit">
 
             <div class="collection-overlay">
-                <h3>Bridal & Festive</h3>
-                <p>Statement pieces for unforgettable occasions.</p>
+
+                <h3>
+                    Bridal & Festive
+                </h3>
+
+                <p>
+                    Statement pieces for unforgettable occasions.
+                </p>
+
             </div>
 
         </div>
@@ -1034,14 +1498,23 @@ footer{
 
         <div class="collection-side">
 
+
             <div class="collection-card">
 
-                <img src="https://lh3.googleusercontent.com/gps-cs-s/AHRPTWlzWKHkQW63Hskzf7a-D1oq8Hw24dbd7sS2GzrXcJrdMR4k6AwlcJv20OKhJjn1eqepOLHjOwcf2ppKnEVaLxgeRu1cfo3NgVg3E4k3KEnNjin_uM4De4HVG3DCPXtz1pM4H-WghK5ChCUc=w224-h399-k-no"
-                alt="Boutique fashion">
+                <img
+                src="https://lh3.googleusercontent.com/gps-cs-s/AHRPTWlzWKHkQW63Hskzf7a-D1oq8Hw24dbd7sS2GzrXcJrdMR4k6AwlcJv20OKhJjn1eqepOLHjOwcf2ppKnEVaLxgeRu1cfo3NgVg3E4k3KEnNjin_uM4De4HVG3DCPXtz1pM4H-WghK5ChCUc=w224-h399-k-no"
+                alt="Pahenawa custom fashion">
 
                 <div class="collection-overlay">
-                    <h3>Custom Design</h3>
-                    <p>Your idea, translated into an outfit.</p>
+
+                    <h3>
+                        Custom Design
+                    </h3>
+
+                    <p>
+                        Your idea, translated into an outfit.
+                    </p>
+
                 </div>
 
             </div>
@@ -1049,12 +1522,20 @@ footer{
 
             <div class="collection-card">
 
-                <img src="https://lh3.googleusercontent.com/gps-cs-s/AHRPTWkg3Z3iq7W9m8e5G88kD3EDwIFBU8wLJQCQOmmWn57pQKGl4_MIkN4GHzaw358-xSHO1LVMbEuDYpIbY5aTwhczOphov8SO7EQ2LF5BfFnnM86LFcb5WN-JHE-65c9RYMYkHcZmMw=w224-h298-k-no"
-                alt="Ethnic wear">
+                <img
+                src="https://lh3.googleusercontent.com/gps-cs-s/AHRPTWkg3Z3iq7W9m8e5G88kD3EDwIFBU8wLJQCQOmmWn57pQKGl4_MIkN4GHzaw358-xSHO1LVMbEuDYpIbY5aTwhczOphov8SO7EQ2LF5BfFnnM86LFcb5WN-JHE-65c9RYMYkHcZmMw=w224-h298-k-no"
+                alt="Pahenawa ethnic wear">
 
                 <div class="collection-overlay">
-                    <h3>Perfect Fit</h3>
-                    <p>Precise stitching and finishing.</p>
+
+                    <h3>
+                        Perfect Fit
+                    </h3>
+
+                    <p>
+                        Precision stitching and finishing.
+                    </p>
+
                 </div>
 
             </div>
@@ -1066,15 +1547,192 @@ footer{
 </section>
 
 
-<!-- ================= STORY ================= -->
+
+<!-- =========================================================
+     INSTAGRAM STYLE PORTFOLIO
+========================================================= -->
+
+<section class="portfolio" id="portfolio">
+
+    <div class="portfolio-header">
+
+        <div class="section-label">
+            Our Portfolio
+        </div>
+
+        <h2 class="section-heading">
+            Follow the Pahenawa story.
+        </h2>
+
+        <div class="instagram-handle">
+
+            <span class="instagram-icon"></span>
+
+            <span>
+                @thepahenawaboutique
+            </span>
+
+        </div>
+
+    </div>
+
+
+    <div class="portfolio-grid">
+
+
+        <div class="portfolio-item">
+
+            <img
+            src="https://lh3.googleusercontent.com/gps-cs-s/AHRPTWkGyR6U0JTOQSIVKXFaBiadCsMrRB3Axe1rLznnarUeQLpRLKMqxjIYAHNsvBGopQRrPxKswmS2QvWZc20Q6VWnrmjGZR-sN8s4Yr9tmqJ69r0fZjxplFC4mLq71XSmM6DSt0s=w408-h316-k-no"
+            alt="Boutique">
+
+            <div class="portfolio-overlay">
+                <span>Inside Pahenawa</span>
+            </div>
+
+        </div>
+
+
+        <div class="portfolio-item">
+
+            <img
+            src="https://lh3.googleusercontent.com/gps-cs-s/AHRPTWm9BgRRl9we2dsB-M_rLe2KSuh8Uflp5RAb8fW6VdshL7hhbRonr7QCwfs631rf_wDhM_o3xqhjH6IrU8-VwfXcgKX8kWQ5qHGFElsx-ra8o1EoWTx0VB91O0xRdbLc5Luj6cn3T9ZEnR29=w224-h397-k-no"
+            alt="Ethnic outfit">
+
+            <div class="portfolio-overlay">
+                <span>Festive Edit</span>
+            </div>
+
+        </div>
+
+
+        <div class="portfolio-item">
+
+            <img
+            src="https://lh3.googleusercontent.com/gps-cs-s/AHRPTWlzWKHkQW63Hskzf7a-D1oq8Hw24dbd7sS2GzrXcJrdMR4k6AwlcJv20OKhJjn1eqepOLHjOwcf2ppKnEVaLxgeRu1cfo3NgVg3E4k3KEnNjin_uM4De4HVG3DCPXtz1pM4H-WghK5ChCUc=w224-h399-k-no"
+            alt="Pahenawa design">
+
+            <div class="portfolio-overlay">
+                <span>Custom Design</span>
+            </div>
+
+        </div>
+
+
+        <div class="portfolio-item">
+
+            <img
+            src="https://lh3.googleusercontent.com/gps-cs-s/AHRPTWkg3Z3iq7W9m8e5G88kD3EDwIFBU8wLJQCQOmmWn57pQKGl4_MIkN4GHzaw358-xSHO1LVMbEuDYpIbY5aTwhczOphov8SO7EQ2LF5BfFnnM86LFcb5WN-JHE-65c9RYMYkHcZmMw=w224-h298-k-no"
+            alt="Pahenawa outfit">
+
+            <div class="portfolio-overlay">
+                <span>Details</span>
+            </div>
+
+        </div>
+
+
+        <div class="portfolio-item">
+
+            <img
+            src="https://lh3.googleusercontent.com/gps-cs-s/AHRPTWk2gFd0Z3-MxoAANCvAdPX6nYZwyRP5WN-iI3zDYwIgOqduol9x5KMq7bH1pdU4vBvamJUyFK8B1j8JytgkJyICVmlAvzE45A0693aeQUlkkNyOGNQsAkNQGDzrm1UmBj8o_z5O7Q=w224-h395-k-no"
+            alt="Pahenawa stitching">
+
+            <div class="portfolio-overlay">
+                <span>Craftsmanship</span>
+            </div>
+
+        </div>
+
+
+        <div class="portfolio-item">
+
+            <img
+            src="https://streetviewpixels-pa.googleapis.com/v1/thumbnail?panoid=Pki33TfJYlwpif84vXN5fQ&cb_client=maps_sv.tactile.gps&w=224&h=298&yaw=349.19678&pitch=0&thumbfov=100"
+            alt="Pahenawa location">
+
+            <div class="portfolio-overlay">
+                <span>Visit Us</span>
+            </div>
+
+        </div>
+
+    </div>
+
+</section>
+
+
+
+<!-- =========================================================
+     BEFORE / AFTER STITCHING
+========================================================= -->
+
+<section class="transformation">
+
+    <div class="transformation-header">
+
+        <div class="section-label">
+            From Idea to Outfit
+        </div>
+
+        <h2 class="section-heading">
+            See the transformation.
+        </h2>
+
+    </div>
+
+
+    <div class="before-after" id="beforeAfter">
+
+        <!-- BEFORE -->
+
+        <img
+        src="https://lh3.googleusercontent.com/gps-cs-s/AHRPTWkGyR6U0JTOQSIVKXFaBiadCsMrRB3Axe1rLznnarUeQLpRLKMqxjIYAHNsvBGopQRrPxKswmS2QvWZc20Q6VWnrmjGZR-sN8s4Yr9tmqJ69r0fZjxplFC4mLq71XSmM6DSt0s=w408-h316-k-no"
+        alt="Before custom stitching">
+
+
+        <!-- AFTER -->
+
+        <div class="after-image" id="afterImage">
+
+            <img
+            src="https://lh3.googleusercontent.com/gps-cs-s/AHRPTWm9BgRRl9we2dsB-M_rLe2KSuh8Uflp5RAb8fW6VdshL7hhbRonr7QCwfs631rf_wDhM_o3xqhjH6IrU8-VwfXcgKX8kWQ5qHGFElsx-ra8o1EoWTx0VB91O0xRdbLc5Luj6cn3T9ZEnR29=w224-h397-k-no"
+            alt="After custom stitching">
+
+        </div>
+
+
+        <div class="ba-label before-label">
+            Before
+        </div>
+
+        <div class="ba-label after-label">
+            After
+        </div>
+
+
+        <div class="ba-slider" id="baSlider"></div>
+
+    </div>
+
+</section>
+
+
+
+<!-- =========================================================
+     STORY
+========================================================= -->
 
 <section class="story">
 
     <div class="story-image"></div>
 
+
     <div class="story-content">
 
-        <div class="section-label">Our Philosophy</div>
+        <div class="section-label">
+            Our Philosophy
+        </div>
 
         <h2>
             Your vision.<br>
@@ -1101,58 +1759,18 @@ footer{
 </section>
 
 
-<!-- ================= GALLERY ================= -->
 
-<section class="gallery" id="gallery">
-
-    <div class="gallery-header">
-
-        <div class="section-label">Inside Pahenawa</div>
-
-        <h2 class="section-heading">
-            A glimpse of our work.
-        </h2>
-
-    </div>
-
-    <div class="gallery-grid">
-
-        <div class="gallery-item">
-            <img src="https://lh3.googleusercontent.com/gps-cs-s/AHRPTWkGyR6U0JTOQSIVKXFaBiadCsMrRB3Axe1rLznnarUeQLpRLKMqxjIYAHNsvBGopQRrPxKswmS2QvWZc20Q6VWnrmjGZR-sN8s4Yr9tmqJ69r0fZjxplFC4mLq71XSmM6DSt0s=w408-h316-k-no">
-        </div>
-
-        <div class="gallery-item">
-            <img src="https://lh3.googleusercontent.com/gps-cs-s/AHRPTWm9BgRRl9we2dsB-M_rLe2KSuh8Uflp5RAb8fW6VdshL7hhbRonr7QCwfs631rf_wDhM_o3xqhjH6IrU8-VwfXcgKX8kWQ5qHGFElsx-ra8o1EoWTx0VB91O0xRdbLc5Luj6cn3T9ZEnR29=w224-h397-k-no">
-        </div>
-
-        <div class="gallery-item">
-            <img src="https://lh3.googleusercontent.com/gps-cs-s/AHRPTWlzWKHkQW63Hskzf7a-D1oq8Hw24dbd7sS2GzrXcJrdMR4k6AwlcJv20OKhJjn1eqepOLHjOwcf2ppKnEVaLxgeRu1cfo3NgVg3E4k3KEnNjin_uM4De4HVG3DCPXtz1pM4H-WghK5ChCUc=w224-h399-k-no">
-        </div>
-
-        <div class="gallery-item">
-            <img src="https://lh3.googleusercontent.com/gps-cs-s/AHRPTWkg3Z3iq7W9m8e5G88kD3EDwIFBU8wLJQCQOmmW57pQKGl4_MIkN4GHzaw358-xSHO1LVMbEuDYpIbY5aTwhczOphov8SO7EQ2LF5BfFnnM86LFcb5WN-JHE-65c9RYMYkHcZmMw=w224-h298-k-no">
-        </div>
-
-        <div class="gallery-item">
-            <img src="https://lh3.googleusercontent.com/gps-cs-s/AHRPTWk2gFd0Z3-MxoAANCvAdPX6nYZwyRP5WN-iI3zDYwIgOqduol9x5KMq7bH1pdU4vBvamJUyFK8B1j8JytgkJyICVmlAvzE45A0693aeQUlkkNyOGNQsAkNQGDzrm1UmBj8o_z5O7Q=w224-h395-k-no">
-        </div>
-
-        <div class="gallery-item">
-            <img src="https://streetviewpixels-pa.googleapis.com/v1/thumbnail?panoid=Pki33TfJYlwpif84vXN5fQ&cb_client=maps_sv.tactile.gps&w=224&h=298&yaw=349.19678&pitch=0&thumbfov=100">
-        </div>
-
-    </div>
-
-</section>
-
-
-<!-- ================= REVIEWS ================= -->
+<!-- =========================================================
+     REVIEWS
+========================================================= -->
 
 <section class="reviews" id="reviews">
 
-    <div class="gallery-header">
+    <div class="review-heading">
 
-        <div class="section-label">Client Love</div>
+        <div class="section-label">
+            Client Love
+        </div>
 
         <h2 class="section-heading">
             What our clients say.
@@ -1160,16 +1778,32 @@ footer{
 
     </div>
 
+
     <div class="rating">
-        <strong>4.8</strong>
-        <span>★★★★★ &nbsp; · &nbsp; 157 Google Reviews</span>
+
+        <div class="rating-number">
+            4.8
+        </div>
+
+        <div class="rating-stars">
+            ★★★★★
+        </div>
+
+        <div class="rating-sub">
+            157 Google Reviews
+        </div>
+
     </div>
+
 
     <div class="review-grid">
 
+
         <div class="review">
 
-            <div class="stars">★★★★★</div>
+            <div class="review-stars">
+                ★★★★★
+            </div>
 
             <p>
                 "This was my first visit to Pahenawa Boutique,
@@ -1186,7 +1820,9 @@ footer{
 
         <div class="review">
 
-            <div class="stars">★★★★★</div>
+            <div class="review-stars">
+                ★★★★★
+            </div>
 
             <p>
                 "I recently got a saree and blouse designed
@@ -1203,7 +1839,9 @@ footer{
 
         <div class="review">
 
-            <div class="stars">★★★★★</div>
+            <div class="review-stars">
+                ★★★★★
+            </div>
 
             <p>
                 "They stitched my outfit exactly the way
@@ -1222,40 +1860,47 @@ footer{
 </section>
 
 
-<!-- ================= APPOINTMENT ================= -->
 
-<section class="appointment" id="contact">
+<!-- =========================================================
+     APPOINTMENT + CALENDAR
+========================================================= -->
+
+<section class="appointment" id="appointment">
+
 
     <div>
 
-        <div class="section-label">Let's Create Something</div>
+        <div class="section-label">
+            Let's Create Something
+        </div>
 
         <h2>
-            Have a design<br>
-            in mind?
+            Your dream<br>
+            outfit starts here.
         </h2>
 
-        <p class="appointment-text">
-            Tell us what you're looking for and we'll
-            get in touch to discuss your outfit,
-            measurements and requirements.
+        <p class="appointment-intro">
+            Book a consultation with The Pahenawa Boutique.
+            Choose your preferred date and time and send
+            your appointment request directly on WhatsApp.
         </p>
+
 
         <div class="contact-details">
 
-            <div>
+            <div class="contact-detail">
                 <strong>Phone</strong>
                 <a href="tel:06389351023">
                     063893 51023
                 </a>
             </div>
 
-            <div>
+            <div class="contact-detail">
                 <strong>Location</strong>
                 Gomti Nagar, Lucknow
             </div>
 
-            <div>
+            <div class="contact-detail">
                 <strong>Hours</strong>
                 11:00 AM onwards
             </div>
@@ -1265,55 +1910,174 @@ footer{
     </div>
 
 
-    <form class="form" id="bookingForm">
+    <div class="booking-card">
 
-        <input
+        <div class="booking-title">
+            Book an Appointment
+        </div>
+
+
+        <form id="appointmentForm">
+
+
+            <label class="form-label">
+                Your Name
+            </label>
+
+            <input
             type="text"
-            id="name"
-            placeholder="Your Name"
+            id="bookingName"
+            placeholder="Enter your name"
             required>
 
-        <input
+
+            <label class="form-label">
+                Phone Number
+            </label>
+
+            <input
             type="tel"
-            id="phone"
-            placeholder="Phone Number"
+            id="bookingPhone"
+            placeholder="Enter your phone number"
             required>
 
-        <select id="service" required>
 
-            <option value="">
-                What are you looking for?
-            </option>
+            <div class="form-row">
 
-            <option>Lehenga</option>
-            <option>Sharara</option>
-            <option>Saree & Blouse</option>
-            <option>Gown</option>
-            <option>Custom Design</option>
-            <option>Other</option>
+                <div>
 
-        </select>
+                    <label class="form-label">
+                        Appointment Date
+                    </label>
 
-        <textarea
-            id="message"
-            placeholder="Tell us about your requirement..."></textarea>
+                    <input
+                    type="date"
+                    id="bookingDate"
+                    required>
 
-        <button type="submit">
-            Send Enquiry on WhatsApp
-        </button>
+                </div>
 
-    </form>
+
+                <div>
+
+                    <label class="form-label">
+                        Outfit Type
+                    </label>
+
+                    <select id="bookingService" required>
+
+                        <option value="">
+                            Select
+                        </option>
+
+                        <option>Lehenga</option>
+                        <option>Sharara</option>
+                        <option>Saree & Blouse</option>
+                        <option>Gown</option>
+                        <option>Custom Design</option>
+                        <option>Other</option>
+
+                    </select>
+
+                </div>
+
+            </div>
+
+
+            <label class="form-label">
+                Select Time
+            </label>
+
+            <div class="time-slots" id="timeSlots">
+
+                <button type="button" class="time-slot">
+                    11:00 AM
+                </button>
+
+                <button type="button" class="time-slot">
+                    12:00 PM
+                </button>
+
+                <button type="button" class="time-slot">
+                    1:00 PM
+                </button>
+
+                <button type="button" class="time-slot">
+                    2:00 PM
+                </button>
+
+                <button type="button" class="time-slot">
+                    3:00 PM
+                </button>
+
+                <button type="button" class="time-slot">
+                    4:00 PM
+                </button>
+
+                <button type="button" class="time-slot">
+                    5:00 PM
+                </button>
+
+                <button type="button" class="time-slot">
+                    6:00 PM
+                </button>
+
+                <button type="button" class="time-slot">
+                    7:00 PM
+                </button>
+
+            </div>
+
+
+            <input
+            type="hidden"
+            id="selectedTime"
+            required>
+
+
+            <label class="form-label">
+                Additional Details
+            </label>
+
+            <textarea
+            id="bookingMessage"
+            placeholder="Tell us about your outfit or requirements..."></textarea>
+
+
+            <button
+            class="booking-submit"
+            type="submit">
+
+                Confirm Appointment on WhatsApp
+
+            </button>
+
+
+            <div class="booking-note">
+
+                Your appointment request will open in WhatsApp.
+
+            </div>
+
+        </form>
+
+    </div>
 
 </section>
 
 
-<!-- ================= LOCATION ================= -->
+
+<!-- =========================================================
+     LOCATION
+========================================================= -->
 
 <section class="location">
 
     <div class="location-info">
 
-        <div class="section-label">Visit Us</div>
+        <div class="section-label">
+            Visit Us
+        </div>
 
         <h2>
             Come see<br>
@@ -1328,11 +2092,15 @@ footer{
             Uttar Pradesh 226010.
         </p>
 
+
         <a
-            class="btn btn-primary"
-            href="https://www.google.com/maps/search/?api=1&query=The+Pahenawa+Boutique+Gomti+Nagar+Lucknow"
-            target="_blank">
+        class="btn"
+        style="background:var(--brown);color:white;"
+        href="https://www.google.com/maps/search/?api=1&query=The+Pahenawa+Boutique+Gomti+Nagar+Lucknow"
+        target="_blank">
+
             Get Directions
+
         </a>
 
     </div>
@@ -1341,8 +2109,8 @@ footer{
     <div class="map">
 
         <iframe
-            src="https://www.google.com/maps?q=The%20Pahenawa%20Boutique%20Gomti%20Nagar%20Lucknow&output=embed"
-            loading="lazy">
+        src="https://www.google.com/maps?q=The%20Pahenawa%20Boutique%20Gomti%20Nagar%20Lucknow&output=embed"
+        loading="lazy">
         </iframe>
 
     </div>
@@ -1350,21 +2118,39 @@ footer{
 </section>
 
 
-<!-- ================= FOOTER ================= -->
+
+<!-- =========================================================
+     FOOTER
+========================================================= -->
 
 <footer>
 
     <div class="footer-top">
 
+
         <div>
 
             <div class="footer-logo">
-                The Pahenawa
+
+                <div class="logo">
+
+                    <div class="logo-symbol"></div>
+
+                    <div class="logo-text">
+                        PAHENAWA
+                        <small>THE BOUTIQUE</small>
+                    </div>
+
+                </div>
+
             </div>
 
-            <p>
-                Bespoke ethnic wear and personalised
-                fashion crafted in Gomti Nagar, Lucknow.
+
+            <p class="footer-description">
+
+                Bespoke ethnic wear and personalised fashion,
+                crafted with care in Gomti Nagar, Lucknow.
+
             </p>
 
         </div>
@@ -1373,10 +2159,14 @@ footer{
         <div class="footer-links">
 
             <a href="#home">Home</a>
+
             <a href="#services">Services</a>
-            <a href="#gallery">Gallery</a>
+
+            <a href="#portfolio">Portfolio</a>
+
             <a href="#reviews">Reviews</a>
-            <a href="#contact">Contact</a>
+
+            <a href="#appointment">Contact</a>
 
         </div>
 
@@ -1398,37 +2188,73 @@ footer{
 </footer>
 
 
-<!-- ================= WHATSAPP ================= -->
 
-<a
+<!-- =========================================================
+     FLOATING WHATSAPP
+========================================================= -->
+
+<div class="whatsapp-container">
+
+    <div class="whatsapp-label">
+        Chat with us
+    </div>
+
+    <a
     class="whatsapp"
     href="https://wa.me/916389351023"
     target="_blank"
-    aria-label="Chat on WhatsApp">
+    aria-label="Chat with The Pahenawa Boutique on WhatsApp">
 
-    ☎
+        ☎
 
-</a>
+    </a>
 
+</div>
+
+
+
+<!-- =========================================================
+     TOAST
+========================================================= -->
+
+<div class="toast" id="toast">
+    Please select an appointment time.
+</div>
+
+
+
+<!-- =========================================================
+     JAVASCRIPT
+========================================================= -->
 
 <script>
 
-/* ================= NAVBAR ================= */
+
+/* =========================================================
+   NAVBAR
+========================================================= */
 
 const navbar = document.getElementById("navbar");
 
 window.addEventListener("scroll", () => {
 
-    if(window.scrollY > 60){
+    if(window.scrollY > 50){
+
         navbar.classList.add("scrolled");
+
     }else{
+
         navbar.classList.remove("scrolled");
+
     }
 
 });
 
 
-/* ================= MOBILE MENU ================= */
+
+/* =========================================================
+   MOBILE MENU
+========================================================= */
 
 const menuBtn = document.getElementById("menuBtn");
 const navLinks = document.getElementById("navLinks");
@@ -1443,100 +2269,375 @@ menuBtn.addEventListener("click", () => {
 document.querySelectorAll(".nav-links a").forEach(link => {
 
     link.addEventListener("click", () => {
+
         navLinks.classList.remove("active");
+
     });
 
 });
 
 
-/* ================= WHATSAPP FORM ================= */
 
-document.getElementById("bookingForm").addEventListener("submit", function(e){
+/* =========================================================
+   BEFORE / AFTER SLIDER
+========================================================= */
 
-    e.preventDefault();
+const beforeAfter =
+    document.getElementById("beforeAfter");
 
-    const name =
-        document.getElementById("name").value.trim();
+const afterImage =
+    document.getElementById("afterImage");
 
-    const phone =
-        document.getElementById("phone").value.trim();
-
-    const service =
-        document.getElementById("service").value;
-
-    const message =
-        document.getElementById("message").value.trim();
+const baSlider =
+    document.getElementById("baSlider");
 
 
-    const whatsappNumber = "916389351023";
+let dragging = false;
 
 
-    const text =
-`Hello The Pahenawa Boutique! 👋
+function updateSlider(clientX){
 
-I'd like to enquire about an outfit.
+    const rect =
+        beforeAfter.getBoundingClientRect();
 
-Name: ${name}
-Phone: ${phone}
-Requirement: ${service}
+    let position =
+        ((clientX - rect.left) / rect.width) * 100;
 
-Message:
-${message || "I'd like to discuss the details."}`;
+    position =
+        Math.max(5, Math.min(95, position));
+
+    afterImage.style.clipPath =
+        `inset(0 0 0 ${position}%)`;
+
+    baSlider.style.left =
+        position + "%";
+
+}
 
 
-    const url =
-        "https://wa.me/" +
-        whatsappNumber +
-        "?text=" +
-        encodeURIComponent(text);
+baSlider.addEventListener("mousedown", () => {
 
+    dragging = true;
 
-    window.open(url, "_blank");
+});
+
+document.addEventListener("mouseup", () => {
+
+    dragging = false;
+
+});
+
+document.addEventListener("mousemove", e => {
+
+    if(dragging){
+
+        updateSlider(e.clientX);
+
+    }
 
 });
 
 
-/* ================= IMAGE FADE-IN ================= */
+baSlider.addEventListener("touchstart", e => {
 
-const images = document.querySelectorAll("img");
+    dragging = true;
 
-const observer = new IntersectionObserver(
+}, {passive:true});
 
-    entries => {
 
-        entries.forEach(entry => {
+document.addEventListener("touchend", () => {
 
-            if(entry.isIntersecting){
+    dragging = false;
 
-                entry.target.style.opacity = "1";
-                entry.target.style.transform = "scale(1)";
+});
 
-                observer.unobserve(entry.target);
 
-            }
+document.addEventListener("touchmove", e => {
+
+    if(dragging){
+
+        updateSlider(
+            e.touches[0].clientX
+        );
+
+    }
+
+}, {passive:true});
+
+
+beforeAfter.addEventListener("click", e => {
+
+    updateSlider(e.clientX);
+
+});
+
+
+
+/* =========================================================
+   APPOINTMENT DATE
+========================================================= */
+
+const bookingDate =
+    document.getElementById("bookingDate");
+
+
+const today =
+    new Date();
+
+
+const yyyy =
+    today.getFullYear();
+
+
+const mm =
+    String(today.getMonth() + 1)
+    .padStart(2,"0");
+
+
+const dd =
+    String(today.getDate())
+    .padStart(2,"0");
+
+
+bookingDate.min =
+    `${yyyy}-${mm}-${dd}`;
+
+
+
+/* =========================================================
+   TIME SLOT SELECTOR
+========================================================= */
+
+const timeSlots =
+    document.querySelectorAll(".time-slot");
+
+const selectedTime =
+    document.getElementById("selectedTime");
+
+
+timeSlots.forEach(slot => {
+
+    slot.addEventListener("click", () => {
+
+        timeSlots.forEach(s => {
+
+            s.classList.remove("selected");
 
         });
 
-    },
 
-    {
-        threshold:.1
+        slot.classList.add("selected");
+
+
+        selectedTime.value =
+            slot.textContent.trim();
+
+    });
+
+});
+
+
+
+/* =========================================================
+   TOAST
+========================================================= */
+
+const toast =
+    document.getElementById("toast");
+
+
+function showToast(message){
+
+    toast.textContent = message;
+
+    toast.classList.add("show");
+
+    setTimeout(() => {
+
+        toast.classList.remove("show");
+
+    },3000);
+
+}
+
+
+
+/* =========================================================
+   APPOINTMENT FORM → WHATSAPP
+========================================================= */
+
+const appointmentForm =
+    document.getElementById("appointmentForm");
+
+
+appointmentForm.addEventListener("submit", function(e){
+
+    e.preventDefault();
+
+
+    const name =
+        document.getElementById("bookingName")
+        .value.trim();
+
+
+    const phone =
+        document.getElementById("bookingPhone")
+        .value.trim();
+
+
+    const date =
+        document.getElementById("bookingDate")
+        .value;
+
+
+    const service =
+        document.getElementById("bookingService")
+        .value;
+
+
+    const time =
+        selectedTime.value;
+
+
+    const message =
+        document.getElementById("bookingMessage")
+        .value.trim();
+
+
+    if(!time){
+
+        showToast(
+            "Please select an appointment time."
+        );
+
+        return;
+
     }
 
-);
+
+    if(!date){
+
+        showToast(
+            "Please select an appointment date."
+        );
+
+        return;
+
+    }
+
+
+    const formattedDate =
+        new Date(date + "T00:00:00")
+        .toLocaleDateString(
+            "en-IN",
+            {
+                day:"numeric",
+                month:"long",
+                year:"numeric"
+            }
+        );
+
+
+    const whatsappNumber =
+        "916389351023";
+
+
+    const whatsappMessage =
+
+`Hello The Pahenawa Boutique! 👋
+
+I'd like to book an appointment.
+
+Name: ${name}
+Phone: ${phone}
+
+Appointment Date:
+${formattedDate}
+
+Preferred Time:
+${time}
+
+Outfit / Service:
+${service}
+
+Additional Details:
+${message || "No additional details."}
+
+Please confirm my appointment. Thank you!`;
+
+
+    const whatsappURL =
+        "https://wa.me/" +
+        whatsappNumber +
+        "?text=" +
+        encodeURIComponent(whatsappMessage);
+
+
+    window.open(
+        whatsappURL,
+        "_blank"
+    );
+
+});
+
+
+
+/* =========================================================
+   IMAGE LOADING ANIMATION
+========================================================= */
+
+const images =
+    document.querySelectorAll("img");
+
+
+const imageObserver =
+    new IntersectionObserver(
+
+        entries => {
+
+            entries.forEach(entry => {
+
+                if(entry.isIntersecting){
+
+                    entry.target.style.opacity = "1";
+
+                    entry.target.style.transform =
+                        "scale(1)";
+
+                    imageObserver.unobserve(
+                        entry.target
+                    );
+
+                }
+
+            });
+
+        },
+
+        {
+            threshold:.08
+        }
+
+    );
 
 
 images.forEach(img => {
 
     img.style.opacity = "0";
-    img.style.transform = "scale(1.02)";
-    img.style.transition = "opacity .8s ease, transform 1s ease";
 
-    observer.observe(img);
+    img.style.transform =
+        "scale(1.02)";
+
+    img.style.transition =
+        "opacity .8s ease, transform 1s ease";
+
+    imageObserver.observe(img);
 
 });
 
+
 </script>
+
 
 </body>
 </html>
