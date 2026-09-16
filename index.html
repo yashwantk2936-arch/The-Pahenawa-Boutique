@@ -1,0 +1,1543 @@
+```html
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+<title>The Pahenawa Boutique | Lucknow</title>
+
+<meta name="description"
+content="The Pahenawa Boutique in Gomti Nagar, Lucknow — bespoke lehengas, shararas, sarees, blouses, gowns and custom-designed ethnic wear.">
+
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+
+<link href="https://fonts.googleapis.com/css2?family=Cormorant+Garamond:wght@400;500;600;700&family=DM+Sans:wght@400;500;600;700&display=swap" rel="stylesheet">
+
+<style>
+
+:root{
+    --cream:#f8f4ed;
+    --ivory:#fffdf8;
+    --brown:#3d2921;
+    --brown2:#6c4a3d;
+    --gold:#b89558;
+    --light-gold:#d8c092;
+    --text:#29211e;
+    --muted:#756c67;
+    --white:#ffffff;
+}
+
+*{
+    margin:0;
+    padding:0;
+    box-sizing:border-box;
+}
+
+html{
+    scroll-behavior:smooth;
+}
+
+body{
+    font-family:"DM Sans",sans-serif;
+    color:var(--text);
+    background:var(--ivory);
+    overflow-x:hidden;
+}
+
+img{
+    width:100%;
+    display:block;
+}
+
+a{
+    text-decoration:none;
+    color:inherit;
+}
+
+button{
+    font-family:inherit;
+}
+
+/* ================= NAVBAR ================= */
+
+.navbar{
+    position:fixed;
+    top:0;
+    left:0;
+    width:100%;
+    height:78px;
+    z-index:1000;
+    display:flex;
+    align-items:center;
+    justify-content:space-between;
+    padding:0 6%;
+    transition:.4s;
+    color:white;
+}
+
+.navbar.scrolled{
+    background:rgba(255,253,248,.96);
+    backdrop-filter:blur(15px);
+    color:var(--brown);
+    box-shadow:0 5px 25px rgba(0,0,0,.08);
+}
+
+.logo{
+    font-family:"Cormorant Garamond",serif;
+    font-size:28px;
+    font-weight:600;
+    letter-spacing:1px;
+}
+
+.logo span{
+    display:block;
+    font-family:"DM Sans",sans-serif;
+    font-size:8px;
+    letter-spacing:4px;
+    text-align:center;
+    margin-top:-5px;
+}
+
+.nav-links{
+    display:flex;
+    gap:32px;
+    align-items:center;
+    font-size:13px;
+    font-weight:500;
+}
+
+.nav-links a{
+    position:relative;
+}
+
+.nav-links a::after{
+    content:"";
+    position:absolute;
+    left:0;
+    bottom:-7px;
+    width:0;
+    height:1px;
+    background:currentColor;
+    transition:.3s;
+}
+
+.nav-links a:hover::after{
+    width:100%;
+}
+
+.nav-btn{
+    padding:12px 20px;
+    border:1px solid currentColor;
+    border-radius:30px;
+}
+
+.menu-btn{
+    display:none;
+    font-size:27px;
+    cursor:pointer;
+}
+
+/* ================= HERO ================= */
+
+.hero{
+    min-height:100vh;
+    position:relative;
+    display:flex;
+    align-items:center;
+    overflow:hidden;
+    color:white;
+    background:
+    linear-gradient(90deg,
+        rgba(28,18,14,.82),
+        rgba(28,18,14,.38),
+        rgba(28,18,14,.15)),
+    url("https://lh3.googleusercontent.com/gps-cs-s/AHRPTWkGyR6U0JTOQSIVKXFaBiadCsMrRB3Axe1rLznnarUeQLpRLKMqxjIYAHNsvBGopQRrPxKswmS2QvWZc20Q6VWnrmjGZR-sN8s4Yr9tmqJ69r0fZjxplFC4mLq71XSmM6DSt0s=w408-h316-k-no")
+    center/cover;
+}
+
+.hero::after{
+    content:"";
+    position:absolute;
+    inset:0;
+    background:linear-gradient(transparent 60%,rgba(0,0,0,.45));
+}
+
+.hero-content{
+    position:relative;
+    z-index:2;
+    max-width:760px;
+    margin-left:9%;
+    padding-top:70px;
+}
+
+.small-title{
+    font-size:11px;
+    letter-spacing:5px;
+    text-transform:uppercase;
+    margin-bottom:20px;
+    color:#ead8b3;
+}
+
+.hero h1{
+    font-family:"Cormorant Garamond",serif;
+    font-size:clamp(60px,8vw,105px);
+    line-height:.86;
+    font-weight:500;
+    margin-bottom:28px;
+}
+
+.hero h1 em{
+    font-weight:400;
+}
+
+.hero p{
+    max-width:520px;
+    line-height:1.8;
+    color:#eee5dc;
+    font-size:15px;
+}
+
+.hero-buttons{
+    display:flex;
+    gap:14px;
+    margin-top:35px;
+}
+
+.btn{
+    padding:15px 27px;
+    border-radius:40px;
+    font-size:13px;
+    font-weight:600;
+    transition:.3s;
+    display:inline-flex;
+    align-items:center;
+    justify-content:center;
+}
+
+.btn-primary{
+    background:#fff;
+    color:var(--brown);
+}
+
+.btn-primary:hover{
+    transform:translateY(-3px);
+}
+
+.btn-outline{
+    border:1px solid rgba(255,255,255,.7);
+    color:white;
+}
+
+.btn-outline:hover{
+    background:white;
+    color:var(--brown);
+}
+
+/* ================= INTRO ================= */
+
+.intro{
+    padding:110px 8%;
+    text-align:center;
+}
+
+.section-label{
+    font-size:10px;
+    text-transform:uppercase;
+    letter-spacing:4px;
+    color:var(--gold);
+    margin-bottom:15px;
+}
+
+.intro h2,
+.section-heading{
+    font-family:"Cormorant Garamond",serif;
+    font-size:clamp(42px,5vw,65px);
+    font-weight:500;
+    line-height:1;
+    color:var(--brown);
+}
+
+.intro p{
+    max-width:700px;
+    margin:25px auto 0;
+    line-height:1.9;
+    color:var(--muted);
+    font-size:15px;
+}
+
+/* ================= SERVICES ================= */
+
+.services{
+    background:var(--cream);
+    padding:100px 8%;
+}
+
+.heading-row{
+    display:flex;
+    justify-content:space-between;
+    align-items:end;
+    margin-bottom:55px;
+}
+
+.heading-row p{
+    max-width:380px;
+    color:var(--muted);
+    line-height:1.7;
+    font-size:14px;
+}
+
+.service-grid{
+    display:grid;
+    grid-template-columns:repeat(4,1fr);
+    gap:18px;
+}
+
+.service{
+    background:white;
+    padding:35px 25px;
+    min-height:230px;
+    transition:.4s;
+    border-bottom:2px solid transparent;
+}
+
+.service:hover{
+    transform:translateY(-8px);
+    border-color:var(--gold);
+    box-shadow:0 15px 40px rgba(54,36,28,.08);
+}
+
+.service-number{
+    font-family:"Cormorant Garamond",serif;
+    color:var(--gold);
+    font-size:30px;
+}
+
+.service h3{
+    font-family:"Cormorant Garamond",serif;
+    font-size:29px;
+    margin:25px 0 10px;
+    font-weight:600;
+}
+
+.service p{
+    color:var(--muted);
+    font-size:13px;
+    line-height:1.7;
+}
+
+/* ================= COLLECTION ================= */
+
+.collection{
+    padding:110px 8%;
+}
+
+.collection-grid{
+    display:grid;
+    grid-template-columns:1.2fr .8fr;
+    gap:25px;
+    margin-top:55px;
+}
+
+.collection-main{
+    height:650px;
+    position:relative;
+    overflow:hidden;
+}
+
+.collection-side{
+    display:grid;
+    grid-template-rows:1fr 1fr;
+    gap:25px;
+}
+
+.collection-card{
+    position:relative;
+    overflow:hidden;
+}
+
+.collection-main img,
+.collection-card img{
+    height:100%;
+    object-fit:cover;
+    transition:1s;
+}
+
+.collection-main:hover img,
+.collection-card:hover img{
+    transform:scale(1.05);
+}
+
+.collection-overlay{
+    position:absolute;
+    inset:auto 0 0 0;
+    padding:35px;
+    color:white;
+    background:linear-gradient(transparent,rgba(0,0,0,.75));
+}
+
+.collection-overlay h3{
+    font-family:"Cormorant Garamond",serif;
+    font-size:38px;
+}
+
+.collection-overlay p{
+    font-size:12px;
+    margin-top:5px;
+}
+
+/* ================= STORY ================= */
+
+.story{
+    background:var(--brown);
+    color:white;
+    display:grid;
+    grid-template-columns:1fr 1fr;
+    min-height:620px;
+}
+
+.story-image{
+    background:url("https://lh3.googleusercontent.com/gps-cs-s/AHRPTWmPAp6pA3CxGi30ZIo_fJ_sSeegqqtJ8O07Xl4nKbuH3Enn-qCiceOoK5KdSPjPDxkZwnpE5ALARhWxXjwvIhcz11z4gcoYUQ_jacw-2ixTzoprL70m9RzVDo0iDByJukQZYAmoNYEkr8zE=w224-h398-k-no")
+    center/cover;
+}
+
+.story-content{
+    padding:90px 10%;
+    display:flex;
+    flex-direction:column;
+    justify-content:center;
+}
+
+.story-content .section-label{
+    color:var(--light-gold);
+}
+
+.story-content h2{
+    font-family:"Cormorant Garamond",serif;
+    font-size:60px;
+    font-weight:500;
+    line-height:.95;
+    margin-bottom:25px;
+}
+
+.story-content p{
+    color:#d8cfca;
+    line-height:1.9;
+    font-size:14px;
+    max-width:500px;
+}
+
+/* ================= GALLERY ================= */
+
+.gallery{
+    padding:110px 6%;
+}
+
+.gallery-header{
+    text-align:center;
+    margin-bottom:50px;
+}
+
+.gallery-grid{
+    display:grid;
+    grid-template-columns:repeat(4,1fr);
+    grid-auto-rows:280px;
+    gap:12px;
+}
+
+.gallery-item{
+    overflow:hidden;
+    cursor:pointer;
+}
+
+.gallery-item img{
+    width:100%;
+    height:100%;
+    object-fit:cover;
+    transition:.7s;
+}
+
+.gallery-item:hover img{
+    transform:scale(1.06);
+}
+
+.gallery-item:nth-child(1){
+    grid-row:span 2;
+}
+
+.gallery-item:nth-child(4){
+    grid-column:span 2;
+}
+
+/* ================= REVIEWS ================= */
+
+.reviews{
+    padding:110px 8%;
+    background:var(--cream);
+}
+
+.review-grid{
+    display:grid;
+    grid-template-columns:repeat(3,1fr);
+    gap:20px;
+    margin-top:55px;
+}
+
+.review{
+    background:white;
+    padding:35px;
+}
+
+.stars{
+    color:var(--gold);
+    letter-spacing:3px;
+    margin-bottom:20px;
+}
+
+.review p{
+    color:#5d5550;
+    line-height:1.8;
+    font-size:14px;
+}
+
+.reviewer{
+    margin-top:25px;
+    font-weight:600;
+    font-size:13px;
+}
+
+.rating{
+    margin-top:60px;
+    text-align:center;
+}
+
+.rating strong{
+    font-family:"Cormorant Garamond",serif;
+    font-size:70px;
+    font-weight:500;
+    color:var(--brown);
+}
+
+.rating span{
+    display:block;
+    color:var(--muted);
+}
+
+/* ================= APPOINTMENT ================= */
+
+.appointment{
+    padding:110px 8%;
+    display:grid;
+    grid-template-columns:1fr 1fr;
+    gap:80px;
+    align-items:center;
+}
+
+.appointment h2{
+    font-family:"Cormorant Garamond",serif;
+    font-size:65px;
+    line-height:.95;
+    color:var(--brown);
+    font-weight:500;
+}
+
+.appointment-text{
+    color:var(--muted);
+    line-height:1.8;
+    margin-top:25px;
+    max-width:480px;
+}
+
+.contact-details{
+    margin-top:35px;
+}
+
+.contact-details div{
+    margin-bottom:15px;
+    font-size:14px;
+}
+
+.contact-details strong{
+    display:inline-block;
+    width:90px;
+}
+
+.form{
+    background:var(--cream);
+    padding:40px;
+}
+
+.form input,
+.form select,
+.form textarea{
+    width:100%;
+    padding:16px;
+    border:1px solid #ddd4ca;
+    background:white;
+    margin-bottom:14px;
+    outline:none;
+    font-family:inherit;
+}
+
+.form textarea{
+    min-height:120px;
+    resize:vertical;
+}
+
+.form button{
+    width:100%;
+    border:none;
+    background:var(--brown);
+    color:white;
+    padding:17px;
+    cursor:pointer;
+    font-weight:600;
+}
+
+/* ================= LOCATION ================= */
+
+.location{
+    background:#f1ece4;
+    display:grid;
+    grid-template-columns:1fr 1fr;
+}
+
+.location-info{
+    padding:90px 12%;
+}
+
+.location-info h2{
+    font-family:"Cormorant Garamond",serif;
+    font-size:60px;
+    font-weight:500;
+    color:var(--brown);
+}
+
+.location-info p{
+    color:var(--muted);
+    line-height:1.8;
+    margin:20px 0;
+}
+
+.map{
+    min-height:450px;
+}
+
+.map iframe{
+    width:100%;
+    height:100%;
+    min-height:450px;
+    border:0;
+}
+
+/* ================= FOOTER ================= */
+
+footer{
+    background:#211713;
+    color:#cfc5bf;
+    padding:60px 8% 30px;
+}
+
+.footer-top{
+    display:flex;
+    justify-content:space-between;
+    gap:40px;
+    padding-bottom:50px;
+}
+
+.footer-logo{
+    font-family:"Cormorant Garamond",serif;
+    font-size:38px;
+    color:white;
+}
+
+.footer-top p{
+    max-width:400px;
+    margin-top:10px;
+    font-size:13px;
+    line-height:1.7;
+}
+
+.footer-links{
+    display:flex;
+    gap:35px;
+    font-size:13px;
+}
+
+.footer-links a:hover{
+    color:white;
+}
+
+.footer-bottom{
+    border-top:1px solid #493c36;
+    padding-top:25px;
+    font-size:11px;
+    display:flex;
+    justify-content:space-between;
+}
+
+/* ================= WHATSAPP ================= */
+
+.whatsapp{
+    position:fixed;
+    right:25px;
+    bottom:25px;
+    z-index:999;
+    width:58px;
+    height:58px;
+    border-radius:50%;
+    background:#25D366;
+    color:white;
+    display:flex;
+    align-items:center;
+    justify-content:center;
+    font-size:27px;
+    box-shadow:0 8px 30px rgba(0,0,0,.25);
+    transition:.3s;
+}
+
+.whatsapp:hover{
+    transform:scale(1.1);
+}
+
+/* ================= MOBILE ================= */
+
+@media(max-width:900px){
+
+    .navbar{
+        height:68px;
+        padding:0 6%;
+    }
+
+    .nav-links{
+        position:absolute;
+        top:68px;
+        left:0;
+        width:100%;
+        background:var(--ivory);
+        color:var(--brown);
+        display:none;
+        flex-direction:column;
+        padding:25px;
+        gap:22px;
+        box-shadow:0 15px 30px rgba(0,0,0,.08);
+    }
+
+    .nav-links.active{
+        display:flex;
+    }
+
+    .menu-btn{
+        display:block;
+    }
+
+    .nav-btn{
+        border:0;
+    }
+
+    .hero-content{
+        margin-left:7%;
+        margin-right:7%;
+    }
+
+    .hero h1{
+        font-size:68px;
+    }
+
+    .service-grid{
+        grid-template-columns:1fr 1fr;
+    }
+
+    .collection-grid{
+        grid-template-columns:1fr;
+    }
+
+    .collection-main{
+        height:550px;
+    }
+
+    .story{
+        grid-template-columns:1fr;
+    }
+
+    .story-image{
+        min-height:450px;
+    }
+
+    .gallery-grid{
+        grid-template-columns:1fr 1fr;
+    }
+
+    .review-grid{
+        grid-template-columns:1fr;
+    }
+
+    .appointment{
+        grid-template-columns:1fr;
+        gap:50px;
+    }
+
+    .location{
+        grid-template-columns:1fr;
+    }
+
+    .location-info{
+        padding:70px 8%;
+    }
+
+    .footer-top{
+        flex-direction:column;
+    }
+}
+
+@media(max-width:550px){
+
+    .hero{
+        min-height:90vh;
+    }
+
+    .hero h1{
+        font-size:56px;
+    }
+
+    .hero-buttons{
+        flex-direction:column;
+        align-items:flex-start;
+    }
+
+    .btn{
+        width:100%;
+    }
+
+    .heading-row{
+        display:block;
+    }
+
+    .heading-row p{
+        margin-top:20px;
+    }
+
+    .service-grid{
+        grid-template-columns:1fr;
+    }
+
+    .collection-main{
+        height:450px;
+    }
+
+    .collection-side{
+        height:600px;
+    }
+
+    .gallery-grid{
+        grid-template-columns:1fr 1fr;
+        grid-auto-rows:210px;
+    }
+
+    .gallery-item:nth-child(4){
+        grid-column:auto;
+    }
+
+    .appointment h2,
+    .location-info h2{
+        font-size:48px;
+    }
+
+    .form{
+        padding:25px;
+    }
+
+    .footer-links{
+        flex-wrap:wrap;
+    }
+
+    .footer-bottom{
+        flex-direction:column;
+        gap:10px;
+    }
+}
+
+</style>
+</head>
+
+<body>
+
+<!-- ================= NAVBAR ================= -->
+
+<header class="navbar" id="navbar">
+
+    <a href="#home" class="logo">
+        PAHENAWA
+        <span>BOUTIQUE</span>
+    </a>
+
+    <nav class="nav-links" id="navLinks">
+        <a href="#home">Home</a>
+        <a href="#services">Services</a>
+        <a href="#collection">Collection</a>
+        <a href="#gallery">Gallery</a>
+        <a href="#reviews">Reviews</a>
+        <a href="#contact" class="nav-btn">Book Appointment</a>
+    </nav>
+
+    <div class="menu-btn" id="menuBtn">☰</div>
+
+</header>
+
+
+<!-- ================= HERO ================= -->
+
+<section class="hero" id="home">
+
+    <div class="hero-content">
+
+        <div class="small-title">
+            Bespoke Indian Couture · Lucknow
+        </div>
+
+        <h1>
+            Wear Your<br>
+            <em>Story.</em>
+        </h1>
+
+        <p>
+            Discover thoughtfully designed ethnic wear,
+            crafted around your personality, your occasion
+            and your vision.
+        </p>
+
+        <div class="hero-buttons">
+
+            <a href="#contact" class="btn btn-primary">
+                Book an Appointment
+            </a>
+
+            <a href="#collection" class="btn btn-outline">
+                Explore Collection
+            </a>
+
+        </div>
+
+    </div>
+
+</section>
+
+
+<!-- ================= INTRO ================= -->
+
+<section class="intro">
+
+    <div class="section-label">The Pahenawa Experience</div>
+
+    <h2>
+        Designed for you.<br>
+        Crafted with care.
+    </h2>
+
+    <p>
+        At The Pahenawa Boutique, every outfit begins with an idea.
+        From elegant sarees and perfectly fitted blouses to
+        statement lehengas, shararas and gowns, we turn your
+        vision into an outfit that feels uniquely yours.
+    </p>
+
+</section>
+
+
+<!-- ================= SERVICES ================= -->
+
+<section class="services" id="services">
+
+    <div class="heading-row">
+
+        <div>
+            <div class="section-label">What We Do</div>
+            <h2 class="section-heading">Our Services</h2>
+        </div>
+
+        <p>
+            From first measurements to the final fitting,
+            our focus is on precision, craftsmanship and
+            bringing your design idea to life.
+        </p>
+
+    </div>
+
+    <div class="service-grid">
+
+        <div class="service">
+            <div class="service-number">01</div>
+            <h3>Lehengas</h3>
+            <p>
+                Custom-designed lehengas created around
+                your occasion, style and preferred silhouette.
+            </p>
+        </div>
+
+        <div class="service">
+            <div class="service-number">02</div>
+            <h3>Shararas</h3>
+            <p>
+                Elegant sharara sets with personalised
+                cuts, fittings and detailing.
+            </p>
+        </div>
+
+        <div class="service">
+            <div class="service-number">03</div>
+            <h3>Blouses</h3>
+            <p>
+                Precise blouse fitting and customised
+                designs for sarees and special occasions.
+            </p>
+        </div>
+
+        <div class="service">
+            <div class="service-number">04</div>
+            <h3>Gowns</h3>
+            <p>
+                Contemporary occasion gowns designed
+                to complement your individual style.
+            </p>
+        </div>
+
+    </div>
+
+</section>
+
+
+<!-- ================= COLLECTION ================= -->
+
+<section class="collection" id="collection">
+
+    <div class="section-label">Signature Styles</div>
+
+    <h2 class="section-heading">
+        Made to be remembered.
+    </h2>
+
+    <div class="collection-grid">
+
+        <div class="collection-main">
+
+            <img src="https://lh3.googleusercontent.com/gps-cs-s/AHRPTWm9BgRRl9we2dsB-M_rLe2KSuh8Uflp5RAb8fW6VdshL7hhbRonr7QCwfs631rf_wDhM_o3xqhjH6IrU8-VwfXcgKX8kWQ5qHGFElsx-ra8o1EoWTx0VB91O0xRdbLc5Luj6cn3T9ZEnR29=w224-h397-k-no"
+            alt="The Pahenawa Boutique outfit">
+
+            <div class="collection-overlay">
+                <h3>Bridal & Festive</h3>
+                <p>Statement pieces for unforgettable occasions.</p>
+            </div>
+
+        </div>
+
+
+        <div class="collection-side">
+
+            <div class="collection-card">
+
+                <img src="https://lh3.googleusercontent.com/gps-cs-s/AHRPTWlzWKHkQW63Hskzf7a-D1oq8Hw24dbd7sS2GzrXcJrdMR4k6AwlcJv20OKhJjn1eqepOLHjOwcf2ppKnEVaLxgeRu1cfo3NgVg3E4k3KEnNjin_uM4De4HVG3DCPXtz1pM4H-WghK5ChCUc=w224-h399-k-no"
+                alt="Boutique fashion">
+
+                <div class="collection-overlay">
+                    <h3>Custom Design</h3>
+                    <p>Your idea, translated into an outfit.</p>
+                </div>
+
+            </div>
+
+
+            <div class="collection-card">
+
+                <img src="https://lh3.googleusercontent.com/gps-cs-s/AHRPTWkg3Z3iq7W9m8e5G88kD3EDwIFBU8wLJQCQOmmWn57pQKGl4_MIkN4GHzaw358-xSHO1LVMbEuDYpIbY5aTwhczOphov8SO7EQ2LF5BfFnnM86LFcb5WN-JHE-65c9RYMYkHcZmMw=w224-h298-k-no"
+                alt="Ethnic wear">
+
+                <div class="collection-overlay">
+                    <h3>Perfect Fit</h3>
+                    <p>Precise stitching and finishing.</p>
+                </div>
+
+            </div>
+
+        </div>
+
+    </div>
+
+</section>
+
+
+<!-- ================= STORY ================= -->
+
+<section class="story">
+
+    <div class="story-image"></div>
+
+    <div class="story-content">
+
+        <div class="section-label">Our Philosophy</div>
+
+        <h2>
+            Your vision.<br>
+            Our craftsmanship.
+        </h2>
+
+        <p>
+            We believe clothing should feel personal.
+            That's why every design is approached with
+            attention to detail — from understanding your
+            idea to perfecting the final fitting.
+        </p>
+
+        <br>
+
+        <p>
+            Whether you arrive with a complete design
+            or simply an inspiration, we'll help turn it
+            into something you can confidently wear.
+        </p>
+
+    </div>
+
+</section>
+
+
+<!-- ================= GALLERY ================= -->
+
+<section class="gallery" id="gallery">
+
+    <div class="gallery-header">
+
+        <div class="section-label">Inside Pahenawa</div>
+
+        <h2 class="section-heading">
+            A glimpse of our work.
+        </h2>
+
+    </div>
+
+    <div class="gallery-grid">
+
+        <div class="gallery-item">
+            <img src="https://lh3.googleusercontent.com/gps-cs-s/AHRPTWkGyR6U0JTOQSIVKXFaBiadCsMrRB3Axe1rLznnarUeQLpRLKMqxjIYAHNsvBGopQRrPxKswmS2QvWZc20Q6VWnrmjGZR-sN8s4Yr9tmqJ69r0fZjxplFC4mLq71XSmM6DSt0s=w408-h316-k-no">
+        </div>
+
+        <div class="gallery-item">
+            <img src="https://lh3.googleusercontent.com/gps-cs-s/AHRPTWm9BgRRl9we2dsB-M_rLe2KSuh8Uflp5RAb8fW6VdshL7hhbRonr7QCwfs631rf_wDhM_o3xqhjH6IrU8-VwfXcgKX8kWQ5qHGFElsx-ra8o1EoWTx0VB91O0xRdbLc5Luj6cn3T9ZEnR29=w224-h397-k-no">
+        </div>
+
+        <div class="gallery-item">
+            <img src="https://lh3.googleusercontent.com/gps-cs-s/AHRPTWlzWKHkQW63Hskzf7a-D1oq8Hw24dbd7sS2GzrXcJrdMR4k6AwlcJv20OKhJjn1eqepOLHjOwcf2ppKnEVaLxgeRu1cfo3NgVg3E4k3KEnNjin_uM4De4HVG3DCPXtz1pM4H-WghK5ChCUc=w224-h399-k-no">
+        </div>
+
+        <div class="gallery-item">
+            <img src="https://lh3.googleusercontent.com/gps-cs-s/AHRPTWkg3Z3iq7W9m8e5G88kD3EDwIFBU8wLJQCQOmmW57pQKGl4_MIkN4GHzaw358-xSHO1LVMbEuDYpIbY5aTwhczOphov8SO7EQ2LF5BfFnnM86LFcb5WN-JHE-65c9RYMYkHcZmMw=w224-h298-k-no">
+        </div>
+
+        <div class="gallery-item">
+            <img src="https://lh3.googleusercontent.com/gps-cs-s/AHRPTWk2gFd0Z3-MxoAANCvAdPX6nYZwyRP5WN-iI3zDYwIgOqduol9x5KMq7bH1pdU4vBvamJUyFK8B1j8JytgkJyICVmlAvzE45A0693aeQUlkkNyOGNQsAkNQGDzrm1UmBj8o_z5O7Q=w224-h395-k-no">
+        </div>
+
+        <div class="gallery-item">
+            <img src="https://streetviewpixels-pa.googleapis.com/v1/thumbnail?panoid=Pki33TfJYlwpif84vXN5fQ&cb_client=maps_sv.tactile.gps&w=224&h=298&yaw=349.19678&pitch=0&thumbfov=100">
+        </div>
+
+    </div>
+
+</section>
+
+
+<!-- ================= REVIEWS ================= -->
+
+<section class="reviews" id="reviews">
+
+    <div class="gallery-header">
+
+        <div class="section-label">Client Love</div>
+
+        <h2 class="section-heading">
+            What our clients say.
+        </h2>
+
+    </div>
+
+    <div class="rating">
+        <strong>4.8</strong>
+        <span>★★★★★ &nbsp; · &nbsp; 157 Google Reviews</span>
+    </div>
+
+    <div class="review-grid">
+
+        <div class="review">
+
+            <div class="stars">★★★★★</div>
+
+            <p>
+                "This was my first visit to Pahenawa Boutique,
+                and I truly found a hidden gem. I absolutely
+                loved the final outfits."
+            </p>
+
+            <div class="reviewer">
+                — Avantika Yadav
+            </div>
+
+        </div>
+
+
+        <div class="review">
+
+            <div class="stars">★★★★★</div>
+
+            <p>
+                "I recently got a saree and blouse designed
+                from Pahenawa Boutique, and I absolutely loved
+                the entire experience!"
+            </p>
+
+            <div class="reviewer">
+                — Swastika Sinha
+            </div>
+
+        </div>
+
+
+        <div class="review">
+
+            <div class="stars">★★★★★</div>
+
+            <p>
+                "They stitched my outfit exactly the way
+                I wanted. The owner is very sweet and polite.
+                I've finally found my go-to boutique!"
+            </p>
+
+            <div class="reviewer">
+                — Harshika Singh
+            </div>
+
+        </div>
+
+    </div>
+
+</section>
+
+
+<!-- ================= APPOINTMENT ================= -->
+
+<section class="appointment" id="contact">
+
+    <div>
+
+        <div class="section-label">Let's Create Something</div>
+
+        <h2>
+            Have a design<br>
+            in mind?
+        </h2>
+
+        <p class="appointment-text">
+            Tell us what you're looking for and we'll
+            get in touch to discuss your outfit,
+            measurements and requirements.
+        </p>
+
+        <div class="contact-details">
+
+            <div>
+                <strong>Phone</strong>
+                <a href="tel:06389351023">
+                    063893 51023
+                </a>
+            </div>
+
+            <div>
+                <strong>Location</strong>
+                Gomti Nagar, Lucknow
+            </div>
+
+            <div>
+                <strong>Hours</strong>
+                11:00 AM onwards
+            </div>
+
+        </div>
+
+    </div>
+
+
+    <form class="form" id="bookingForm">
+
+        <input
+            type="text"
+            id="name"
+            placeholder="Your Name"
+            required>
+
+        <input
+            type="tel"
+            id="phone"
+            placeholder="Phone Number"
+            required>
+
+        <select id="service" required>
+
+            <option value="">
+                What are you looking for?
+            </option>
+
+            <option>Lehenga</option>
+            <option>Sharara</option>
+            <option>Saree & Blouse</option>
+            <option>Gown</option>
+            <option>Custom Design</option>
+            <option>Other</option>
+
+        </select>
+
+        <textarea
+            id="message"
+            placeholder="Tell us about your requirement..."></textarea>
+
+        <button type="submit">
+            Send Enquiry on WhatsApp
+        </button>
+
+    </form>
+
+</section>
+
+
+<!-- ================= LOCATION ================= -->
+
+<section class="location">
+
+    <div class="location-info">
+
+        <div class="section-label">Visit Us</div>
+
+        <h2>
+            Come see<br>
+            us.
+        </h2>
+
+        <p>
+            Shop No. D, Shop 302, Sahara Plaza,
+            1st Floor, Gomti Plaza,
+            Patrakarpuram Road,
+            Gomti Nagar, Lucknow,
+            Uttar Pradesh 226010.
+        </p>
+
+        <a
+            class="btn btn-primary"
+            href="https://www.google.com/maps/search/?api=1&query=The+Pahenawa+Boutique+Gomti+Nagar+Lucknow"
+            target="_blank">
+            Get Directions
+        </a>
+
+    </div>
+
+
+    <div class="map">
+
+        <iframe
+            src="https://www.google.com/maps?q=The%20Pahenawa%20Boutique%20Gomti%20Nagar%20Lucknow&output=embed"
+            loading="lazy">
+        </iframe>
+
+    </div>
+
+</section>
+
+
+<!-- ================= FOOTER ================= -->
+
+<footer>
+
+    <div class="footer-top">
+
+        <div>
+
+            <div class="footer-logo">
+                The Pahenawa
+            </div>
+
+            <p>
+                Bespoke ethnic wear and personalised
+                fashion crafted in Gomti Nagar, Lucknow.
+            </p>
+
+        </div>
+
+
+        <div class="footer-links">
+
+            <a href="#home">Home</a>
+            <a href="#services">Services</a>
+            <a href="#gallery">Gallery</a>
+            <a href="#reviews">Reviews</a>
+            <a href="#contact">Contact</a>
+
+        </div>
+
+    </div>
+
+
+    <div class="footer-bottom">
+
+        <span>
+            © 2026 The Pahenawa Boutique
+        </span>
+
+        <span>
+            Gomti Nagar · Lucknow
+        </span>
+
+    </div>
+
+</footer>
+
+
+<!-- ================= WHATSAPP ================= -->
+
+<a
+    class="whatsapp"
+    href="https://wa.me/916389351023"
+    target="_blank"
+    aria-label="Chat on WhatsApp">
+
+    ☎
+
+</a>
+
+
+<script>
+
+/* ================= NAVBAR ================= */
+
+const navbar = document.getElementById("navbar");
+
+window.addEventListener("scroll", () => {
+
+    if(window.scrollY > 60){
+        navbar.classList.add("scrolled");
+    }else{
+        navbar.classList.remove("scrolled");
+    }
+
+});
+
+
+/* ================= MOBILE MENU ================= */
+
+const menuBtn = document.getElementById("menuBtn");
+const navLinks = document.getElementById("navLinks");
+
+menuBtn.addEventListener("click", () => {
+
+    navLinks.classList.toggle("active");
+
+});
+
+
+document.querySelectorAll(".nav-links a").forEach(link => {
+
+    link.addEventListener("click", () => {
+        navLinks.classList.remove("active");
+    });
+
+});
+
+
+/* ================= WHATSAPP FORM ================= */
+
+document.getElementById("bookingForm").addEventListener("submit", function(e){
+
+    e.preventDefault();
+
+    const name =
+        document.getElementById("name").value.trim();
+
+    const phone =
+        document.getElementById("phone").value.trim();
+
+    const service =
+        document.getElementById("service").value;
+
+    const message =
+        document.getElementById("message").value.trim();
+
+
+    const whatsappNumber = "916389351023";
+
+
+    const text =
+`Hello The Pahenawa Boutique! 👋
+
+I'd like to enquire about an outfit.
+
+Name: ${name}
+Phone: ${phone}
+Requirement: ${service}
+
+Message:
+${message || "I'd like to discuss the details."}`;
+
+
+    const url =
+        "https://wa.me/" +
+        whatsappNumber +
+        "?text=" +
+        encodeURIComponent(text);
+
+
+    window.open(url, "_blank");
+
+});
+
+
+/* ================= IMAGE FADE-IN ================= */
+
+const images = document.querySelectorAll("img");
+
+const observer = new IntersectionObserver(
+
+    entries => {
+
+        entries.forEach(entry => {
+
+            if(entry.isIntersecting){
+
+                entry.target.style.opacity = "1";
+                entry.target.style.transform = "scale(1)";
+
+                observer.unobserve(entry.target);
+
+            }
+
+        });
+
+    },
+
+    {
+        threshold:.1
+    }
+
+);
+
+
+images.forEach(img => {
+
+    img.style.opacity = "0";
+    img.style.transform = "scale(1.02)";
+    img.style.transition = "opacity .8s ease, transform 1s ease";
+
+    observer.observe(img);
+
+});
+
+</script>
+
+</body>
+</html>
+```
